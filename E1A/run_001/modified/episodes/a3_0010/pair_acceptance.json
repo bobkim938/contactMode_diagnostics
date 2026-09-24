@@ -1,0 +1,9 @@
+{
+  "pair_id": "a3_0010",
+  "split": "train",
+  "condition": "modified",
+  "accepted": true,
+  "member_accepted": true,
+  "reasons": [],
+  "note": "episode.json quality describes this member; this file describes paired inclusion."
+}

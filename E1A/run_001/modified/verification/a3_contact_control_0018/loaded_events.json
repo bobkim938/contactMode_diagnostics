@@ -1,0 +1,35 @@
+[
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 43,
+    "time_s": 0.002687500000000002,
+    "time_bracket_s": [
+      0.002625000000000002,
+      0.002687500000000002
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 51,
+    "time_s": 0.0031875000000000024,
+    "time_bracket_s": [
+      0.0031250000000000023,
+      0.0031875000000000024
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 61,
+    "time_s": 0.003812500000000003,
+    "time_bracket_s": [
+      0.003750000000000003,
+      0.003812500000000003
+    ],
+    "analysis_eligible": false
+  }
+]

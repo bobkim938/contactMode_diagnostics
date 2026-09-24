@@ -1,0 +1,55 @@
+{
+  "protocol_version": "1.0",
+  "signature": {
+    "model_sha256": "b14661fda0f43ca066a008a8eabf5b64c0e5c6be974e4f64fa234e1d1b09ddeb",
+    "mujoco_version": "3.12.0",
+    "timestep": 0.000125,
+    "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+    "mu": 0.5
+  },
+  "source_script_sha256": "f9a2d92347c126e8061895e18653f827ee6856c170579e1a9b97b996e8dfa0bc",
+  "fit_creep_max_m_s": 0.0004897819401635891,
+  "primary": {
+    "quasi_speed_m_s": 0.0006122274252044864,
+    "slide_speed_m_s": 0.0024489097008179458,
+    "rho_boundary": 0.98,
+    "loaded_force_N": 0.1
+  },
+  "sensitivity": {
+    "quasi_speed_m_s": [
+      0.0005387601341799481,
+      0.0006122274252044864,
+      0.0007346729102453836
+    ],
+    "slide_speed_m_s": [
+      0.0018366822756134592,
+      0.0024489097008179458,
+      0.0036733645512269184
+    ],
+    "rho_boundary": [
+      0.97,
+      0.98,
+      0.99
+    ],
+    "loaded_force_N": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "a3_max_gap_m": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "a3_free_duration_s": [
+      0.01,
+      0.02,
+      0.04
+    ]
+  },
+  "freeze_rule": "Computed from calibration only; validation never changes thresholds. Generation refuses a different protocol/model/version/timestep.",
+  "calibrated_preload_range_N": [
+    8.0,
+    12.0
+  ]
+}

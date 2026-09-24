@@ -1,0 +1,431 @@
+[
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 51,
+    "time_s": 0.0031875000000000024,
+    "time_bracket_s": [
+      0.0031250000000000023,
+      0.0031875000000000024
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 8359,
+    "time_s": 0.5224375000000504,
+    "time_bracket_s": [
+      0.5223750000000504,
+      0.5224375000000504
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 11109,
+    "time_s": 0.6943124999999551,
+    "time_bracket_s": [
+      0.6942499999999552,
+      0.6943124999999551
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 16045,
+    "time_s": 1.0028124999997892,
+    "time_bracket_s": [
+      1.002749999999789,
+      1.0028124999997892
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 19693,
+    "time_s": 1.2308125000000678,
+    "time_bracket_s": [
+      1.2307500000000677,
+      1.2308125000000678
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 24672,
+    "time_s": 1.5420000000004481,
+    "time_bracket_s": [
+      1.541937500000448,
+      1.5420000000004481
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 28321,
+    "time_s": 1.7700625000007268,
+    "time_bracket_s": [
+      1.7700000000007268,
+      1.7700625000007268
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 33300,
+    "time_s": 2.0812500000008183,
+    "time_bracket_s": [
+      2.0811875000008184,
+      2.0812500000008183
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 36948,
+    "time_s": 2.309250000000287,
+    "time_bracket_s": [
+      2.309187500000287,
+      2.309250000000287
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 41928,
+    "time_s": 2.6204999999995615,
+    "time_bracket_s": [
+      2.6204374999995617,
+      2.6204999999995615
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 45576,
+    "time_s": 2.84849999999903,
+    "time_bracket_s": [
+      2.8484374999990303,
+      2.84849999999903
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.05,
+    "row_index": 50555,
+    "time_s": 3.159687499998305,
+    "time_bracket_s": [
+      3.159624999998305,
+      3.159687499998305
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.05,
+    "row_index": 54204,
+    "time_s": 3.3877499999977734,
+    "time_bracket_s": [
+      3.3876874999977735,
+      3.3877499999977734
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 60,
+    "time_s": 0.003750000000000003,
+    "time_bracket_s": [
+      0.003687500000000003,
+      0.003750000000000003
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 8352,
+    "time_s": 0.5220000000000506,
+    "time_bracket_s": [
+      0.5219375000000507,
+      0.5220000000000506
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 11110,
+    "time_s": 0.6943749999999551,
+    "time_bracket_s": [
+      0.6943124999999551,
+      0.6943749999999551
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 16040,
+    "time_s": 1.0024999999997888,
+    "time_bracket_s": [
+      1.0024374999997887,
+      1.0024999999997888
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 19694,
+    "time_s": 1.2308750000000679,
+    "time_bracket_s": [
+      1.2308125000000678,
+      1.2308750000000679
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 24668,
+    "time_s": 1.5417500000004478,
+    "time_bracket_s": [
+      1.5416875000004477,
+      1.5417500000004478
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 28322,
+    "time_s": 1.770125000000727,
+    "time_bracket_s": [
+      1.7700625000007268,
+      1.770125000000727
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 33296,
+    "time_s": 2.081000000000819,
+    "time_bracket_s": [
+      2.080937500000819,
+      2.081000000000819
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 36949,
+    "time_s": 2.3093125000002868,
+    "time_bracket_s": [
+      2.309250000000287,
+      2.3093125000002868
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 41923,
+    "time_s": 2.6201874999995622,
+    "time_bracket_s": [
+      2.6201249999995624,
+      2.6201874999995622
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 45577,
+    "time_s": 2.84856249999903,
+    "time_bracket_s": [
+      2.84849999999903,
+      2.84856249999903
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.1,
+    "row_index": 50551,
+    "time_s": 3.1594374999983055,
+    "time_bracket_s": [
+      3.1593749999983056,
+      3.1594374999983055
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.1,
+    "row_index": 54204,
+    "time_s": 3.3877499999977734,
+    "time_bracket_s": [
+      3.3876874999977735,
+      3.3877499999977734
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 71,
+    "time_s": 0.004437500000000003,
+    "time_bracket_s": [
+      0.004375000000000003,
+      0.004437500000000003
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 8337,
+    "time_s": 0.5210625000000512,
+    "time_bracket_s": [
+      0.5210000000000512,
+      0.5210625000000512
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 11111,
+    "time_s": 0.6944374999999551,
+    "time_bracket_s": [
+      0.6943749999999551,
+      0.6944374999999551
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 16032,
+    "time_s": 1.0019999999997882,
+    "time_bracket_s": [
+      1.001937499999788,
+      1.0019999999997882
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 19695,
+    "time_s": 1.230937500000068,
+    "time_bracket_s": [
+      1.2308750000000679,
+      1.230937500000068
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 24660,
+    "time_s": 1.5412500000004472,
+    "time_bracket_s": [
+      1.5411875000004471,
+      1.5412500000004472
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 28323,
+    "time_s": 1.770187500000727,
+    "time_bracket_s": [
+      1.770125000000727,
+      1.770187500000727
+    ],
+    "analysis_eligible": false
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 33287,
+    "time_s": 2.08043750000082,
+    "time_bracket_s": [
+      2.0803750000008203,
+      2.08043750000082
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 36950,
+    "time_s": 2.3093750000002866,
+    "time_bracket_s": [
+      2.3093125000002868,
+      2.3093750000002866
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 41915,
+    "time_s": 2.6196874999995634,
+    "time_bracket_s": [
+      2.6196249999995636,
+      2.6196874999995634
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 45578,
+    "time_s": 2.84862499999903,
+    "time_bracket_s": [
+      2.84856249999903,
+      2.84862499999903
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_offset",
+    "threshold_N": 0.2,
+    "row_index": 50542,
+    "time_s": 3.158874999998307,
+    "time_bracket_s": [
+      3.158812499998307,
+      3.158874999998307
+    ],
+    "analysis_eligible": true
+  },
+  {
+    "type": "loaded_onset",
+    "threshold_N": 0.2,
+    "row_index": 54205,
+    "time_s": 3.3878124999977732,
+    "time_bracket_s": [
+      3.3877499999977734,
+      3.3878124999977732
+    ],
+    "analysis_eligible": true
+  }
+]

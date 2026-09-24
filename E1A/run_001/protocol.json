@@ -1,0 +1,157 @@
+{
+  "name": "E1A",
+  "version": "1.0",
+  "seed": 20260922,
+  "timestep_s": 0.000125,
+  "mujoco_version": "3.12.0",
+  "numpy_version": "2.2.6",
+  "pairs_per_family": 20,
+  "cycles": 3,
+  "conditions": {
+    "original": {
+      "signature": {
+        "model_sha256": "ae1f940119af8947d1af8b78e7667209821f74b9caa6e9673cddf48486f29dba",
+        "mujoco_version": "3.12.0",
+        "timestep": 0.000125,
+        "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+        "mu": 0.5
+      },
+      "requested_solimp": [
+        0.9,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "effective_contact_solimp": [
+        0.9,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "effective_contact_solref": [
+        0.02,
+        1.0
+      ],
+      "internal_impedance_floor": 0.0001
+    },
+    "modified": {
+      "signature": {
+        "model_sha256": "f1a342a75756be40e461adacaf6d127db5bd0ec4434222ba5a786c5ce439de8a",
+        "mujoco_version": "3.12.0",
+        "timestep": 0.000125,
+        "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+        "mu": 0.5
+      },
+      "requested_solimp": [
+        0.0,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "effective_contact_solimp": [
+        0.0,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "effective_contact_solref": [
+        0.02,
+        1.0
+      ],
+      "internal_impedance_floor": 0.0001
+    }
+  },
+  "a3": {
+    "stiffness_N_m": 1000.0,
+    "damping_N_s_m": 30.0,
+    "nominal_preload_N": [
+      8.0,
+      12.0
+    ],
+    "initial_y_m": [
+      -0.15,
+      0.15
+    ],
+    "amplitude_m": [
+      0.015,
+      0.025
+    ],
+    "frequency_Hz": [
+      1.5,
+      2.5
+    ],
+    "settle_s": 0.3,
+    "fade_s": 0.5,
+    "discard_periods_after_fade": 1,
+    "contact_control_amplitude_m": [
+      0.001,
+      0.003
+    ],
+    "free_control_initial_gap_m": 0.08,
+    "free_control_amplitude_m": [
+      0.012,
+      0.02
+    ],
+    "free_control_frequency_Hz": [
+      4.0,
+      5.5
+    ],
+    "minimum_max_gap_m": 0.001,
+    "minimum_free_duration_s": 0.02,
+    "minimum_free_samples": 40,
+    "minimum_contact_duration_s": 0.05,
+    "recontact_impulse_window_s": 0.02,
+    "reference_step_ratio": 0.5,
+    "event_time_tolerance_s": 0.001,
+    "free_duration_tolerance_s": 0.001,
+    "gap_relative_tolerance": 0.02,
+    "gap_absolute_tolerance_m": 5e-05,
+    "impulse_relative_tolerance": 0.05,
+    "impulse_absolute_tolerance_Ns": 0.005,
+    "same_mode_state_max_error_m": 0.0001,
+    "same_mode_velocity_max_error_m_s": 0.01,
+    "gap_sensitivity_m": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "free_duration_sensitivity_s": [
+      0.01,
+      0.02,
+      0.04
+    ]
+  },
+  "labels": {
+    "primary": {
+      "loaded_force_N": 0.1
+    },
+    "sensitivity": {
+      "loaded_force_N": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    "mode_codes": {
+      "FREE": 0,
+      "BOUNDARY": 2,
+      "CONTACT": 4
+    },
+    "note": "Fixed A3 force threshold, not calibrated A2 stick/slide thresholds."
+  },
+  "startup_rule": "Exclude settle and fade, then one full drive period; start at the next zero-phase ascending cycle boundary.",
+  "source_sha256": {
+    "input_model.xml": "b14661fda0f43ca066a008a8eabf5b64c0e5c6be974e4f64fa234e1d1b09ddeb",
+    "e1a_generate.py": "05d799f3ddc6f41d2ded62db379dc39443c431947bbdbc2946cd9607b5820a9c",
+    "e1_generate.py": "1c38e6214385bf96eaee85ff37e13c2843d97f5995ed81fda412dc9d638c012c"
+  },
+  "pairing": "Same initial state, support drive and split. Closed-loop forces can differ.",
+  "acceptance": "Both members must pass primary and half-step QA and refinement. Never resample failures.",
+  "training_rows": "analysis_mask & valid_transition, only paired accepted primary traces",
+  "event_time": "First geometric contact sample t_i; each row predicts the interval [t_i,t_i+dt].",
+  "smoothness_note": "solimp[0]=0 is internally clamped; it is not exactly zero impedance."
+}

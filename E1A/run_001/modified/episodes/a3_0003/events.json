@@ -1,0 +1,32 @@
+[
+  {
+    "type": "contact_to_free",
+    "cycle": 0,
+    "time_s": 1.7793749999996937
+  },
+  {
+    "type": "free_to_contact",
+    "cycle": 0,
+    "time_s": 2.011249999999585
+  },
+  {
+    "type": "contact_to_free",
+    "cycle": 1,
+    "time_s": 2.33424999999998
+  },
+  {
+    "type": "free_to_contact",
+    "cycle": 1,
+    "time_s": 2.5661250000002633
+  },
+  {
+    "type": "contact_to_free",
+    "cycle": 2,
+    "time_s": 2.889000000000658
+  },
+  {
+    "type": "free_to_contact",
+    "cycle": 2,
+    "time_s": 3.1208750000009413
+  }
+]

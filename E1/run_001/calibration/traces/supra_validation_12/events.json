@@ -1,0 +1,18 @@
+[
+  {
+    "type": "quasi_to_slide",
+    "cycle": 0,
+    "time_interval_s": [
+      1.0038750000001235,
+      1.0447500000001009
+    ]
+  },
+  {
+    "type": "slide_to_quasi",
+    "cycle": 0,
+    "time_interval_s": [
+      1.1575000000000384,
+      1.1902500000000202
+    ]
+  }
+]

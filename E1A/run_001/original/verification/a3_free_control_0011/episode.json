@@ -1,0 +1,66 @@
+{
+  "parameters": {
+    "kind": "a3_free_control",
+    "nominal_preload": 0.0,
+    "initial_qx": 2.67,
+    "initial_y": -0.05862515410697322,
+    "support_center": 2.67,
+    "amplitude": 0.019463102646131037,
+    "frequency": 5.172237644596328,
+    "phase": 2.9852669444964093,
+    "cycle_count": 3,
+    "episode_seed": 1109309826
+  },
+  "program": {
+    "analysis_start": 1.1748399281424948,
+    "analysis_end": 1.7548596809344486,
+    "duration": 1.7548596809344486,
+    "cycle_windows": [
+      [
+        1.1748399281424948,
+        1.3681798457398129
+      ],
+      [
+        1.3681798457398129,
+        1.5615197633371307
+      ],
+      [
+        1.5615197633371307,
+        1.7548596809344486
+      ]
+    ]
+  },
+  "signature": {
+    "model_sha256": "ae1f940119af8947d1af8b78e7667209821f74b9caa6e9673cddf48486f29dba",
+    "mujoco_version": "3.12.0",
+    "timestep": 6.25e-05,
+    "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+    "mu": 0.5
+  },
+  "steps": 28078,
+  "requested_steps": 28078,
+  "error": null,
+  "terminal": {
+    "time": 1.7548750000007083,
+    "gap": 0.10098779662237337,
+    "contact_flag": false
+  },
+  "warning_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "solver_iteration_limit": 100,
+  "quality": {
+    "accepted": true,
+    "reasons": [],
+    "cycles": [],
+    "events": []
+  },
+  "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+  "role": "verification_only"
+}

@@ -1,0 +1,31 @@
+{
+  "train": [
+    "episodes/a2_0000/trace.npz",
+    "episodes/a2_0001/trace.npz",
+    "episodes/a2_0002/trace.npz",
+    "episodes/a2_0004/trace.npz",
+    "episodes/a2_0005/trace.npz",
+    "episodes/a2_0007/trace.npz",
+    "episodes/a3_0000/trace.npz",
+    "episodes/a3_0001/trace.npz",
+    "episodes/a3_0002/trace.npz",
+    "episodes/a3_0003/trace.npz",
+    "episodes/a2_quasi_control_0002/trace.npz",
+    "episodes/a3_contact_control_0002/trace.npz",
+    "episodes/a3_free_control_0000/trace.npz"
+  ],
+  "validation": [
+    "episodes/a2_0006/trace.npz",
+    "episodes/a3_0004/trace.npz",
+    "episodes/a2_quasi_control_0000/trace.npz",
+    "episodes/a3_contact_control_0000/trace.npz",
+    "episodes/a3_free_control_0002/trace.npz"
+  ],
+  "test": [
+    "episodes/a2_0003/trace.npz",
+    "episodes/a3_0005/trace.npz",
+    "episodes/a2_quasi_control_0001/trace.npz",
+    "episodes/a3_contact_control_0001/trace.npz",
+    "episodes/a3_free_control_0001/trace.npz"
+  ]
+}

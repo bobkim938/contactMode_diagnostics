@@ -1,0 +1,1088 @@
+{
+  "condition": "modified",
+  "complete": true,
+  "training_ready": true,
+  "protocol_sha256": "b6b65b1e96758fb04efb05729d3cc04fc268207eb164e4cff729148a364d525e",
+  "episodes": [
+    {
+      "id": "a3_0000",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0000/trace.npz",
+      "metadata": "episodes/a3_0000/episode.json",
+      "raw_rows": 28720,
+      "eligible_rows": 13457,
+      "analysis_window_s": [
+        1.9076893003916808,
+        3.589892210005707
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0001",
+      "family": "a3",
+      "split_planned": "test",
+      "trace": "episodes/a3_0001/trace.npz",
+      "metadata": "episodes/a3_0001/episode.json",
+      "raw_rows": 30225,
+      "eligible_rows": 14701,
+      "analysis_window_s": [
+        1.9402800182666207,
+        3.778107829488755
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0002",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0002/trace.npz",
+      "metadata": "episodes/a3_0002/episode.json",
+      "raw_rows": 29010,
+      "eligible_rows": 14603,
+      "analysis_window_s": [
+        1.80070957630943,
+        3.626224362065976
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0003",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0003/trace.npz",
+      "metadata": "episodes/a3_0003/episode.json",
+      "raw_rows": 25153,
+      "eligible_rows": 13315,
+      "analysis_window_s": [
+        1.4795947036611188,
+        3.144022190349668
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0004",
+      "family": "a3",
+      "split_planned": "test",
+      "trace": "episodes/a3_0004/trace.npz",
+      "metadata": "episodes/a3_0004/episode.json",
+      "raw_rows": 23530,
+      "eligible_rows": 11970,
+      "analysis_window_s": [
+        1.4448142212646962,
+        2.9411403801565945
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0005",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0005/trace.npz",
+      "metadata": "episodes/a3_0005/episode.json",
+      "raw_rows": 22675,
+      "eligible_rows": 10364,
+      "analysis_window_s": [
+        1.5387260879868863,
+        2.834277574697603
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0006",
+      "family": "a3",
+      "split_planned": "validation",
+      "trace": "episodes/a3_0006/trace.npz",
+      "metadata": "episodes/a3_0006/episode.json",
+      "raw_rows": 30869,
+      "eligible_rows": 15531,
+      "analysis_window_s": [
+        1.9170830341994212,
+        3.8586038505977456
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0007",
+      "family": "a3",
+      "split_planned": "validation",
+      "trace": "episodes/a3_0007/trace.npz",
+      "metadata": "episodes/a3_0007/episode.json",
+      "raw_rows": 22727,
+      "eligible_rows": 11978,
+      "analysis_window_s": [
+        1.3434243764998264,
+        2.8408407847796675
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0008",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0008/trace.npz",
+      "metadata": "episodes/a3_0008/episode.json",
+      "raw_rows": 28961,
+      "eligible_rows": 14245,
+      "analysis_window_s": [
+        1.8393080682830696,
+        3.6201113466444124
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0009",
+      "family": "a3",
+      "split_planned": "test",
+      "trace": "episodes/a3_0009/trace.npz",
+      "metadata": "episodes/a3_0009/episode.json",
+      "raw_rows": 27354,
+      "eligible_rows": 12941,
+      "analysis_window_s": [
+        1.8014793654195864,
+        3.4191563671757907
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0010",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0010/trace.npz",
+      "metadata": "episodes/a3_0010/episode.json",
+      "raw_rows": 28844,
+      "eligible_rows": 14184,
+      "analysis_window_s": [
+        1.8323138461488369,
+        3.6054091244517115
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0011",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0011/trace.npz",
+      "metadata": "episodes/a3_0011/episode.json",
+      "raw_rows": 23184,
+      "eligible_rows": 11836,
+      "analysis_window_s": [
+        1.418374184002747,
+        2.8979122841263028
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0012",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0012/trace.npz",
+      "metadata": "episodes/a3_0012/episode.json",
+      "raw_rows": 23791,
+      "eligible_rows": 11463,
+      "analysis_window_s": [
+        1.5408702322221581,
+        2.9737762921860735
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0013",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0013/trace.npz",
+      "metadata": "episodes/a3_0013/episode.json",
+      "raw_rows": 21690,
+      "eligible_rows": 9761,
+      "analysis_window_s": [
+        1.4909877590512124,
+        2.7112079470466384
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0014",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0014/trace.npz",
+      "metadata": "episodes/a3_0014/episode.json",
+      "raw_rows": 20708,
+      "eligible_rows": 10170,
+      "analysis_window_s": [
+        1.317098350199658,
+        2.5884709207853573
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0015",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0015/trace.npz",
+      "metadata": "episodes/a3_0015/episode.json",
+      "raw_rows": 26598,
+      "eligible_rows": 13062,
+      "analysis_window_s": [
+        1.6918521195825484,
+        3.324688268893138
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0016",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0016/trace.npz",
+      "metadata": "episodes/a3_0016/episode.json",
+      "raw_rows": 22879,
+      "eligible_rows": 10355,
+      "analysis_window_s": [
+        1.5652643373619846,
+        2.8597914233604755
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0017",
+      "family": "a3",
+      "split_planned": "validation",
+      "trace": "episodes/a3_0017/trace.npz",
+      "metadata": "episodes/a3_0017/episode.json",
+      "raw_rows": 22518,
+      "eligible_rows": 11459,
+      "analysis_window_s": [
+        1.3822318026016147,
+        2.814728831362113
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0018",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0018/trace.npz",
+      "metadata": "episodes/a3_0018/episode.json",
+      "raw_rows": 25052,
+      "eligible_rows": 13470,
+      "analysis_window_s": [
+        1.4475464699316676,
+        3.1314894986993247
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_0019",
+      "family": "a3",
+      "split_planned": "train",
+      "trace": "episodes/a3_0019/trace.npz",
+      "metadata": "episodes/a3_0019/episode.json",
+      "raw_rows": 27535,
+      "eligible_rows": 13189,
+      "analysis_window_s": [
+        1.7930478263871295,
+        3.4417754685908886
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0000",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0000/trace.npz",
+      "metadata": "episodes/a3_contact_control_0000/episode.json",
+      "raw_rows": 23878,
+      "eligible_rows": 12410,
+      "analysis_window_s": [
+        1.4332510190690146,
+        2.984671640193378
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0001",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0001/trace.npz",
+      "metadata": "episodes/a3_contact_control_0001/episode.json",
+      "raw_rows": 28821,
+      "eligible_rows": 15689,
+      "analysis_window_s": [
+        1.6413291624401984,
+        3.602531344147321
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0002",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0002/trace.npz",
+      "metadata": "episodes/a3_contact_control_0002/episode.json",
+      "raw_rows": 26452,
+      "eligible_rows": 14663,
+      "analysis_window_s": [
+        1.4733811133130348,
+        3.3063876263247822
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0003",
+      "family": "a3_contact_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_contact_control_0003/trace.npz",
+      "metadata": "episodes/a3_contact_control_0003/episode.json",
+      "raw_rows": 26380,
+      "eligible_rows": 13765,
+      "analysis_window_s": [
+        1.5766319774902562,
+        3.297411199887795
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0004",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0004/trace.npz",
+      "metadata": "episodes/a3_contact_control_0004/episode.json",
+      "raw_rows": 29862,
+      "eligible_rows": 14174,
+      "analysis_window_s": [
+        1.9608409963125644,
+        3.7326406164843258
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0005",
+      "family": "a3_contact_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_contact_control_0005/trace.npz",
+      "metadata": "episodes/a3_contact_control_0005/episode.json",
+      "raw_rows": 24214,
+      "eligible_rows": 10887,
+      "analysis_window_s": [
+        1.6656384331149483,
+        3.026634478356133
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0006",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0006/trace.npz",
+      "metadata": "episodes/a3_contact_control_0006/episode.json",
+      "raw_rows": 24964,
+      "eligible_rows": 12660,
+      "analysis_window_s": [
+        1.5378597567496681,
+        3.1204764445402144
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0007",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0007/trace.npz",
+      "metadata": "episodes/a3_contact_control_0007/episode.json",
+      "raw_rows": 23002,
+      "eligible_rows": 11947,
+      "analysis_window_s": [
+        1.3816694889478884,
+        2.8751656265326937
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0008",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0008/trace.npz",
+      "metadata": "episodes/a3_contact_control_0008/episode.json",
+      "raw_rows": 31159,
+      "eligible_rows": 15671,
+      "analysis_window_s": [
+        1.9357797800831666,
+        3.894769922166871
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0009",
+      "family": "a3_contact_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_contact_control_0009/trace.npz",
+      "metadata": "episodes/a3_contact_control_0009/episode.json",
+      "raw_rows": 29326,
+      "eligible_rows": 13814,
+      "analysis_window_s": [
+        1.9388011743252522,
+        3.665634604615782
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0010",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0010/trace.npz",
+      "metadata": "episodes/a3_contact_control_0010/episode.json",
+      "raw_rows": 19885,
+      "eligible_rows": 9608,
+      "analysis_window_s": [
+        1.2844309652318504,
+        2.4856116479818073
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0011",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0011/trace.npz",
+      "metadata": "episodes/a3_contact_control_0011/episode.json",
+      "raw_rows": 20957,
+      "eligible_rows": 9899,
+      "analysis_window_s": [
+        1.3820695355872603,
+        2.6195461887766163
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0012",
+      "family": "a3_contact_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_contact_control_0012/trace.npz",
+      "metadata": "episodes/a3_contact_control_0012/episode.json",
+      "raw_rows": 20991,
+      "eligible_rows": 9761,
+      "analysis_window_s": [
+        1.4036076842939424,
+        2.623819766062244
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0013",
+      "family": "a3_contact_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_contact_control_0013/trace.npz",
+      "metadata": "episodes/a3_contact_control_0013/episode.json",
+      "raw_rows": 21134,
+      "eligible_rows": 10100,
+      "analysis_window_s": [
+        1.3790542795937069,
+        2.6416831721482046
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0014",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0014/trace.npz",
+      "metadata": "episodes/a3_contact_control_0014/episode.json",
+      "raw_rows": 21301,
+      "eligible_rows": 10177,
+      "analysis_window_s": [
+        1.3902708789275406,
+        2.6625036444841808
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0015",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0015/trace.npz",
+      "metadata": "episodes/a3_contact_control_0015/episode.json",
+      "raw_rows": 19617,
+      "eligible_rows": 9703,
+      "analysis_window_s": [
+        1.2390012944663658,
+        2.452063553394681
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0016",
+      "family": "a3_contact_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_contact_control_0016/trace.npz",
+      "metadata": "episodes/a3_contact_control_0016/episode.json",
+      "raw_rows": 25691,
+      "eligible_rows": 12981,
+      "analysis_window_s": [
+        1.5885624153456295,
+        3.211302239572621
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0017",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0017/trace.npz",
+      "metadata": "episodes/a3_contact_control_0017/episode.json",
+      "raw_rows": 24300,
+      "eligible_rows": 11767,
+      "analysis_window_s": [
+        1.5664293033280428,
+        3.0374873502841973
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0018",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0018/trace.npz",
+      "metadata": "episodes/a3_contact_control_0018/episode.json",
+      "raw_rows": 27079,
+      "eligible_rows": 12915,
+      "analysis_window_s": [
+        1.7703141079076663,
+        3.3847508364185552
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_contact_control_0019",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_contact_control_0019/trace.npz",
+      "metadata": "episodes/a3_contact_control_0019/episode.json",
+      "raw_rows": 27035,
+      "eligible_rows": 14681,
+      "analysis_window_s": [
+        1.5440386812515026,
+        3.3793451119656934
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0000",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0000/trace.npz",
+      "metadata": "episodes/a3_free_control_0000/episode.json",
+      "raw_rows": 13566,
+      "eligible_rows": 4525,
+      "analysis_window_s": [
+        1.1299561525767328,
+        1.695732408301308
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0001",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0001/trace.npz",
+      "metadata": "episodes/a3_free_control_0001/episode.json",
+      "raw_rows": 15285,
+      "eligible_rows": 5862,
+      "analysis_window_s": [
+        1.1777037388575793,
+        1.9105269639274274
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0002",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0002/trace.npz",
+      "metadata": "episodes/a3_free_control_0002/episode.json",
+      "raw_rows": 14158,
+      "eligible_rows": 4674,
+      "analysis_window_s": [
+        1.1853066631200824,
+        1.7696744925088108
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0003",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0003/trace.npz",
+      "metadata": "episodes/a3_free_control_0003/episode.json",
+      "raw_rows": 12869,
+      "eligible_rows": 4684,
+      "analysis_window_s": [
+        1.0229941282984716,
+        1.6086002630967615
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0004",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0004/trace.npz",
+      "metadata": "episodes/a3_free_control_0004/episode.json",
+      "raw_rows": 13867,
+      "eligible_rows": 5400,
+      "analysis_window_s": [
+        1.058203552497554,
+        1.7333245353438822
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0005",
+      "family": "a3_free_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_free_control_0005/trace.npz",
+      "metadata": "episodes/a3_free_control_0005/episode.json",
+      "raw_rows": 14409,
+      "eligible_rows": 5073,
+      "analysis_window_s": [
+        1.1667875294342338,
+        1.8010129389870975
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0006",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0006/trace.npz",
+      "metadata": "episodes/a3_free_control_0006/episode.json",
+      "raw_rows": 12975,
+      "eligible_rows": 4502,
+      "analysis_window_s": [
+        1.0588961451757888,
+        1.6218505531327772
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0007",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0007/trace.npz",
+      "metadata": "episodes/a3_free_control_0007/episode.json",
+      "raw_rows": 15722,
+      "eligible_rows": 5841,
+      "analysis_window_s": [
+        1.2349724359728111,
+        1.965194107556246
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0008",
+      "family": "a3_free_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_free_control_0008/trace.npz",
+      "metadata": "episodes/a3_free_control_0008/episode.json",
+      "raw_rows": 13955,
+      "eligible_rows": 4873,
+      "analysis_window_s": [
+        1.1350769354576105,
+        1.7443284795842031
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0009",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0009/trace.npz",
+      "metadata": "episodes/a3_free_control_0009/episode.json",
+      "raw_rows": 14570,
+      "eligible_rows": 5170,
+      "analysis_window_s": [
+        1.1748210461462507,
+        1.8212261819610207
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0010",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0010/trace.npz",
+      "metadata": "episodes/a3_free_control_0010/episode.json",
+      "raw_rows": 14629,
+      "eligible_rows": 5071,
+      "analysis_window_s": [
+        1.1945175157783434,
+        1.8286204080332047
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0011",
+      "family": "a3_free_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_free_control_0011/trace.npz",
+      "metadata": "episodes/a3_free_control_0011/episode.json",
+      "raw_rows": 14039,
+      "eligible_rows": 4639,
+      "analysis_window_s": [
+        1.1748399281424948,
+        1.7548596809344486
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0012",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0012/trace.npz",
+      "metadata": "episodes/a3_free_control_0012/episode.json",
+      "raw_rows": 13750,
+      "eligible_rows": 4868,
+      "analysis_window_s": [
+        1.1100650265893437,
+        1.7186581981274864
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0013",
+      "family": "a3_free_control",
+      "split_planned": "validation",
+      "trace": "episodes/a3_free_control_0013/trace.npz",
+      "metadata": "episodes/a3_free_control_0013/episode.json",
+      "raw_rows": 14510,
+      "eligible_rows": 5400,
+      "analysis_window_s": [
+        1.1385993603612992,
+        1.813643486591461
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0014",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0014/trace.npz",
+      "metadata": "episodes/a3_free_control_0014/episode.json",
+      "raw_rows": 14889,
+      "eligible_rows": 5095,
+      "analysis_window_s": [
+        1.2240507514535575,
+        1.8611230815570736
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0015",
+      "family": "a3_free_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_free_control_0015/trace.npz",
+      "metadata": "episodes/a3_free_control_0015/episode.json",
+      "raw_rows": 12958,
+      "eligible_rows": 4832,
+      "analysis_window_s": [
+        1.0155928088174053,
+        1.619691711208716
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0016",
+      "family": "a3_free_control",
+      "split_planned": "test",
+      "trace": "episodes/a3_free_control_0016/trace.npz",
+      "metadata": "episodes/a3_free_control_0016/episode.json",
+      "raw_rows": 14819,
+      "eligible_rows": 5839,
+      "analysis_window_s": [
+        1.122314105645853,
+        1.8523051275050069
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0017",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0017/trace.npz",
+      "metadata": "episodes/a3_free_control_0017/episode.json",
+      "raw_rows": 15152,
+      "eligible_rows": 5899,
+      "analysis_window_s": [
+        1.156401873162655,
+        1.8939123171375603
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0018",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0018/trace.npz",
+      "metadata": "episodes/a3_free_control_0018/episode.json",
+      "raw_rows": 13795,
+      "eligible_rows": 5108,
+      "analysis_window_s": [
+        1.0857251098467715,
+        1.7243044042138782
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    },
+    {
+      "id": "a3_free_control_0019",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "trace": "episodes/a3_free_control_0019/trace.npz",
+      "metadata": "episodes/a3_free_control_0019/episode.json",
+      "raw_rows": 15133,
+      "eligible_rows": 5703,
+      "analysis_window_s": [
+        1.1786161684472856,
+        1.8915662784251523
+      ],
+      "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+      "member_accepted": true,
+      "member_reasons": [],
+      "accepted": true,
+      "reasons": []
+    }
+  ]
+}

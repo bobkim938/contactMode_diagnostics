@@ -1,0 +1,1025 @@
+{
+  "seed": 20260922,
+  "pairs": [
+    {
+      "id": "a3_0000",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 11.163403569825146,
+        "initial_qx": 2.75,
+        "initial_y": -0.010820901900380219,
+        "support_center": 2.761163403569825,
+        "amplitude": 0.01797228566875182,
+        "frequency": 1.7833758239595103,
+        "phase": 0.834945912841487,
+        "cycle_count": 3,
+        "episode_seed": 2761845088
+      }
+    },
+    {
+      "id": "a3_0001",
+      "family": "a3",
+      "split": "test",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.244828159270433,
+        "initial_qx": 2.75,
+        "initial_y": 0.08073340032849277,
+        "support_center": 2.7592448281592703,
+        "amplitude": 0.02313268548774721,
+        "frequency": 1.6323618467853278,
+        "phase": 2.0261354996120717,
+        "cycle_count": 3,
+        "episode_seed": 1455466479
+      }
+    },
+    {
+      "id": "a3_0002",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.738856433056844,
+        "initial_qx": 2.75,
+        "initial_y": 0.1179439364914144,
+        "support_center": 2.759738856433057,
+        "amplitude": 0.01695458013227951,
+        "frequency": 1.6433720632707525,
+        "phase": 3.353812309191021,
+        "cycle_count": 3,
+        "episode_seed": 79041034
+      }
+    },
+    {
+      "id": "a3_0003",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.07271090403697,
+        "initial_qx": 2.75,
+        "initial_y": -0.11019388063162226,
+        "support_center": 2.758072710904037,
+        "amplitude": 0.023562217789407303,
+        "frequency": 1.802421567772009,
+        "phase": 5.490706401666693,
+        "cycle_count": 3,
+        "episode_seed": 4269213852
+      }
+    },
+    {
+      "id": "a3_0004",
+      "family": "a3",
+      "split": "test",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 11.692132868896564,
+        "initial_qx": 2.75,
+        "initial_y": 0.12483659271345336,
+        "support_center": 2.7616921328688964,
+        "amplitude": 0.024648672328140553,
+        "frequency": 2.0049104816971486,
+        "phase": 4.428074645369527,
+        "cycle_count": 3,
+        "episode_seed": 3750533510
+      }
+    },
+    {
+      "id": "a3_0005",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 10.62054931878331,
+        "initial_qx": 2.75,
+        "initial_y": -0.14855171132327458,
+        "support_center": 2.760620549318783,
+        "amplitude": 0.016081003857436764,
+        "frequency": 2.3156161918479348,
+        "phase": 0.8267780493449064,
+        "cycle_count": 3,
+        "episode_seed": 3480866024
+      }
+    },
+    {
+      "id": "a3_0006",
+      "family": "a3",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.7156602782081,
+        "initial_qx": 2.75,
+        "initial_y": -0.051707357002411115,
+        "support_center": 2.759715660278208,
+        "amplitude": 0.019704540327032016,
+        "frequency": 1.5451804454846063,
+        "phase": 3.14985451969709,
+        "cycle_count": 3,
+        "episode_seed": 1976875496
+      }
+    },
+    {
+      "id": "a3_0007",
+      "family": "a3",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.685780455130272,
+        "initial_qx": 2.75,
+        "initial_y": 0.0547743204821111,
+        "support_center": 2.7596857804551305,
+        "amplitude": 0.018520308851052877,
+        "frequency": 2.0034507324827926,
+        "phase": 5.7148753971521415,
+        "cycle_count": 3,
+        "episode_seed": 3222286058
+      }
+    },
+    {
+      "id": "a3_0008",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.132105935119618,
+        "initial_qx": 2.75,
+        "initial_y": 0.05404564645758437,
+        "support_center": 2.7591321059351195,
+        "amplitude": 0.021404189423465808,
+        "frequency": 1.684633017275516,
+        "phase": 2.556193332787938,
+        "cycle_count": 3,
+        "episode_seed": 2875548487
+      }
+    },
+    {
+      "id": "a3_0009",
+      "family": "a3",
+      "split": "test",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.632021449355278,
+        "initial_qx": 2.75,
+        "initial_y": 0.0456889212030455,
+        "support_center": 2.7596320214493555,
+        "amplitude": 0.020477130436759722,
+        "frequency": 1.8545111272170522,
+        "phase": 1.3539624051648564,
+        "cycle_count": 3,
+        "episode_seed": 303493638
+      }
+    },
+    {
+      "id": "a3_0010",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.003181046258476,
+        "initial_qx": 2.75,
+        "initial_y": 0.1249578676330095,
+        "support_center": 2.7590031810462583,
+        "amplitude": 0.01763249269229526,
+        "frequency": 1.6919564541796435,
+        "phase": 2.559717532269267,
+        "cycle_count": 3,
+        "episode_seed": 2236823606
+      }
+    },
+    {
+      "id": "a3_0011",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.76568964451456,
+        "initial_qx": 2.75,
+        "initial_y": 0.00437044756564563,
+        "support_center": 2.7597656896445146,
+        "amplitude": 0.020637584184922023,
+        "frequency": 2.027659848536156,
+        "phase": 4.6012870051758705,
+        "cycle_count": 3,
+        "episode_seed": 4033135546
+      }
+    },
+    {
+      "id": "a3_0012",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.108207680862357,
+        "initial_qx": 2.75,
+        "initial_y": -0.04772516756123496,
+        "support_center": 2.7581082076808623,
+        "amplitude": 0.021344044260768618,
+        "frequency": 2.0936473672779004,
+        "phase": 2.526187986146412,
+        "cycle_count": 3,
+        "episode_seed": 4053773426
+      }
+    },
+    {
+      "id": "a3_0013",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 11.732507501413219,
+        "initial_qx": 2.75,
+        "initial_y": 0.12501408534777816,
+        "support_center": 2.761732507501413,
+        "amplitude": 0.01864235376843363,
+        "frequency": 2.4585726654206495,
+        "phase": 0.4515728468741125,
+        "cycle_count": 3,
+        "episode_seed": 732199616
+      }
+    },
+    {
+      "id": "a3_0014",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.9430503616246,
+        "initial_qx": 2.75,
+        "initial_y": 0.0495332970010256,
+        "support_center": 2.7589430503616246,
+        "amplitude": 0.020220654354967914,
+        "frequency": 2.3596544942116786,
+        "phase": 3.7699068294074687,
+        "cycle_count": 3,
+        "episode_seed": 162230875
+      }
+    },
+    {
+      "id": "a3_0015",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.395488680764608,
+        "initial_qx": 2.75,
+        "initial_y": -0.0998731955928808,
+        "support_center": 2.7583954886807645,
+        "amplitude": 0.022341065568642758,
+        "frequency": 1.8372939631858651,
+        "phase": 2.781933720951953,
+        "cycle_count": 3,
+        "episode_seed": 3348856049
+      }
+    },
+    {
+      "id": "a3_0016",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.083230152736313,
+        "initial_qx": 2.75,
+        "initial_y": 0.05081787688699176,
+        "support_center": 2.7580832301527365,
+        "amplitude": 0.021104068995162872,
+        "frequency": 2.3174486130477896,
+        "phase": 0.4260936853370745,
+        "cycle_count": 3,
+        "episode_seed": 1977466917
+      }
+    },
+    {
+      "id": "a3_0017",
+      "family": "a3",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 8.011880241919473,
+        "initial_qx": 2.75,
+        "initial_y": 0.08572159946190185,
+        "support_center": 2.7580118802419196,
+        "amplitude": 0.02094265646512896,
+        "frequency": 2.094245181503671,
+        "phase": 4.60897568043484,
+        "cycle_count": 3,
+        "episode_seed": 339430545
+      }
+    },
+    {
+      "id": "a3_0018",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 11.076118737846459,
+        "initial_qx": 2.75,
+        "initial_y": -0.008499121623053352,
+        "support_center": 2.7610761187378463,
+        "amplitude": 0.018578474012647322,
+        "frequency": 1.7815329549453105,
+        "phase": 6.004263065419291,
+        "cycle_count": 3,
+        "episode_seed": 900141754
+      }
+    },
+    {
+      "id": "a3_0019",
+      "family": "a3",
+      "split": "train",
+      "parameters": {
+        "kind": "a3",
+        "nominal_preload": 9.485333436836884,
+        "initial_qx": 2.75,
+        "initial_y": -0.08593169125490238,
+        "support_center": 2.759485333436837,
+        "amplitude": 0.022976724493099603,
+        "frequency": 1.8195849473294894,
+        "phase": 1.779854549031543,
+        "cycle_count": 3,
+        "episode_seed": 2507779806
+      }
+    },
+    {
+      "id": "a3_contact_control_0000",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 8.77998461901473,
+        "initial_qx": 2.75,
+        "initial_y": -0.0929885532314703,
+        "support_center": 2.758779984619015,
+        "amplitude": 0.0027683734639679524,
+        "frequency": 1.9337115667740745,
+        "phase": 5.080705510358205,
+        "cycle_count": 3,
+        "episode_seed": 2408314912
+      }
+    },
+    {
+      "id": "a3_contact_control_0001",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 10.331155714180136,
+        "initial_qx": 2.75,
+        "initial_y": 0.002297933935984342,
+        "support_center": 2.76033115571418,
+        "amplitude": 0.0011018065439081224,
+        "frequency": 1.5296740070871526,
+        "phase": 5.9577392121572945,
+        "cycle_count": 3,
+        "episode_seed": 2244949892
+      }
+    },
+    {
+      "id": "a3_contact_control_0002",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.805071697395203,
+        "initial_qx": 2.75,
+        "initial_y": 0.04795626180550226,
+        "support_center": 2.759805071697395,
+        "amplitude": 0.0015380187083969407,
+        "frequency": 1.6366553957687837,
+        "phase": 0.5000125541629596,
+        "cycle_count": 3,
+        "episode_seed": 1583215125
+      }
+    },
+    {
+      "id": "a3_contact_control_0003",
+      "family": "a3_contact_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 11.156687485770473,
+        "initial_qx": 2.75,
+        "initial_y": 0.14814999191387096,
+        "support_center": 2.7611566874857703,
+        "amplitude": 0.0026582436831301824,
+        "frequency": 1.7433962247755062,
+        "phase": 4.865225138302533,
+        "cycle_count": 3,
+        "episode_seed": 4014091357
+      }
+    },
+    {
+      "id": "a3_contact_control_0004",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 11.250142992975402,
+        "initial_qx": 2.75,
+        "initial_y": 0.09821716643023772,
+        "support_center": 2.761250142992975,
+        "amplitude": 0.0011993512728647238,
+        "frequency": 1.693193725659098,
+        "phase": 1.1804499569811204,
+        "cycle_count": 3,
+        "episode_seed": 1405352297
+      }
+    },
+    {
+      "id": "a3_contact_control_0005",
+      "family": "a3_contact_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.542614936130851,
+        "initial_qx": 2.75,
+        "initial_y": 0.11948201359786391,
+        "support_center": 2.759542614936131,
+        "amplitude": 0.0019975304908225276,
+        "frequency": 2.2042679774784832,
+        "phase": 6.218889051402828,
+        "cycle_count": 3,
+        "episode_seed": 1347658270
+      }
+    },
+    {
+      "id": "a3_contact_control_0006",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.71263494738907,
+        "initial_qx": 2.75,
+        "initial_y": 0.01762834418769622,
+        "support_center": 2.7597126349473893,
+        "amplitude": 0.0021149508167323827,
+        "frequency": 1.8955948228931088,
+        "phase": 4.106183829051839,
+        "cycle_count": 3,
+        "episode_seed": 3813102169
+      }
+    },
+    {
+      "id": "a3_contact_control_0007",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.335827683087867,
+        "initial_qx": 2.75,
+        "initial_y": 0.1481863071420958,
+        "support_center": 2.759335827683088,
+        "amplitude": 0.0013861621739743987,
+        "frequency": 2.008709580495752,
+        "phase": 5.197703059356364,
+        "cycle_count": 3,
+        "episode_seed": 3085918044
+      }
+    },
+    {
+      "id": "a3_contact_control_0008",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 8.059928915920509,
+        "initial_qx": 2.75,
+        "initial_y": 0.02548754421739745,
+        "support_center": 2.7580599289159204,
+        "amplitude": 0.0022714041991730065,
+        "frequency": 1.531401274336691,
+        "phase": 3.109955309152141,
+        "cycle_count": 3,
+        "episode_seed": 534038287
+      }
+    },
+    {
+      "id": "a3_contact_control_0009",
+      "family": "a3_contact_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 8.89424968136165,
+        "initial_qx": 2.75,
+        "initial_y": 0.03462767226489418,
+        "support_center": 2.7588942496813615,
+        "amplitude": 0.0019984276037675816,
+        "frequency": 1.7372839483975397,
+        "phase": 0.960931669847011,
+        "cycle_count": 3,
+        "episode_seed": 973195369
+      }
+    },
+    {
+      "id": "a3_contact_control_0010",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 11.242527180657515,
+        "initial_qx": 2.75,
+        "initial_y": 0.0026929675517332495,
+        "support_center": 2.7612425271806575,
+        "amplitude": 0.002899421195588407,
+        "frequency": 2.4975426620513623,
+        "phase": 3.4013500050481222,
+        "cycle_count": 3,
+        "episode_seed": 2743356741
+      }
+    },
+    {
+      "id": "a3_contact_control_0011",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 11.24028243750943,
+        "initial_qx": 2.75,
+        "initial_y": 0.004689025102475941,
+        "support_center": 2.7612402824375093,
+        "amplitude": 0.002162270739515414,
+        "frequency": 2.4242881611286022,
+        "phase": 2.367200339736515,
+        "cycle_count": 3,
+        "episode_seed": 51489749
+      }
+    },
+    {
+      "id": "a3_contact_control_0012",
+      "family": "a3_contact_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.572195018686118,
+        "initial_qx": 2.75,
+        "initial_y": 0.11692865648146678,
+        "support_center": 2.759572195018686,
+        "amplitude": 0.0011844731952170332,
+        "frequency": 2.4585889984407245,
+        "phase": 1.801277944818466,
+        "cycle_count": 3,
+        "episode_seed": 2005267010
+      }
+    },
+    {
+      "id": "a3_contact_control_0013",
+      "family": "a3_contact_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 10.43051819936797,
+        "initial_qx": 2.75,
+        "initial_y": -0.1377011271804039,
+        "support_center": 2.760430518199368,
+        "amplitude": 0.0019309787318179206,
+        "frequency": 2.375995051032395,
+        "phase": 2.7405518384570833,
+        "cycle_count": 3,
+        "episode_seed": 4248825557
+      }
+    },
+    {
+      "id": "a3_contact_control_0014",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 10.9290997275803,
+        "initial_qx": 2.75,
+        "initial_y": -0.1246690162752332,
+        "support_center": 2.7609290997275804,
+        "amplitude": 0.0018137966861087632,
+        "frequency": 2.358059060589757,
+        "phase": 2.695969519463858,
+        "cycle_count": 3,
+        "episode_seed": 3483153488
+      }
+    },
+    {
+      "id": "a3_contact_control_0015",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 8.52426466305322,
+        "initial_qx": 2.75,
+        "initial_y": 0.00825087741631766,
+        "support_center": 2.7585242646630532,
+        "amplitude": 0.002744121394992745,
+        "frequency": 2.473079990676127,
+        "phase": 4.258583957677674,
+        "cycle_count": 3,
+        "episode_seed": 186293785
+      }
+    },
+    {
+      "id": "a3_contact_control_0016",
+      "family": "a3_contact_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 10.214151680301388,
+        "initial_qx": 2.75,
+        "initial_y": -0.026851134191372795,
+        "support_center": 2.7602141516803016,
+        "amplitude": 0.0011580388631068717,
+        "frequency": 1.8487251962458489,
+        "phase": 3.8817656794888866,
+        "cycle_count": 3,
+        "episode_seed": 3773844950
+      }
+    },
+    {
+      "id": "a3_contact_control_0017",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.320328430742112,
+        "initial_qx": 2.75,
+        "initial_y": 0.09193890240400561,
+        "support_center": 2.759320328430742,
+        "amplitude": 0.00251668349065086,
+        "frequency": 2.0393484854030484,
+        "phase": 2.6220317778440956,
+        "cycle_count": 3,
+        "episode_seed": 1826808951
+      }
+    },
+    {
+      "id": "a3_contact_control_0018",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 11.942498212221091,
+        "initial_qx": 2.75,
+        "initial_y": -0.03859773241629647,
+        "support_center": 2.761942498212221,
+        "amplitude": 0.002802841767151009,
+        "frequency": 1.858233244462368,
+        "phase": 1.6827215019599544,
+        "cycle_count": 3,
+        "episode_seed": 3427679390
+      }
+    },
+    {
+      "id": "a3_contact_control_0019",
+      "family": "a3_contact_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_contact_control",
+        "nominal_preload": 9.311695472894844,
+        "initial_qx": 2.75,
+        "initial_y": -0.1466376144833096,
+        "support_center": 2.7593116954728947,
+        "amplitude": 0.0011979374373170672,
+        "frequency": 1.634604417984075,
+        "phase": 6.072628701988634,
+        "cycle_count": 3,
+        "episode_seed": 2179306587
+      }
+    },
+    {
+      "id": "a3_free_control_0000",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.1412085798714193,
+        "support_center": 2.67,
+        "amplitude": 0.01635666128331809,
+        "frequency": 5.302449457087904,
+        "phase": 3.764881176306059,
+        "cycle_count": 3,
+        "episode_seed": 851477403
+      }
+    },
+    {
+      "id": "a3_free_control_0001",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.13125165644833023,
+        "support_center": 2.67,
+        "amplitude": 0.01686800458059708,
+        "frequency": 4.093756716995506,
+        "phase": 2.5565930634323863,
+        "cycle_count": 3,
+        "episode_seed": 2574694671
+      }
+    },
+    {
+      "id": "a3_free_control_0002",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.029949090137351374,
+        "support_center": 2.67,
+        "amplitude": 0.01706134416417888,
+        "frequency": 5.13375283361871,
+        "phase": 2.859191180276481,
+        "cycle_count": 3,
+        "episode_seed": 248560147
+      }
+    },
+    {
+      "id": "a3_free_control_0003",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.11458375819981152,
+        "support_center": 2.67,
+        "amplitude": 0.019304239323471077,
+        "frequency": 5.122897151740632,
+        "phase": 1.8609251692770157,
+        "cycle_count": 3,
+        "episode_seed": 294265376
+      }
+    },
+    {
+      "id": "a3_free_control_0004",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.07101022312963604,
+        "support_center": 2.67,
+        "amplitude": 0.019856507517303956,
+        "frequency": 4.443647992322679,
+        "phase": 3.963498047359389,
+        "cycle_count": 3,
+        "episode_seed": 3495278486
+      }
+    },
+    {
+      "id": "a3_free_control_0005",
+      "family": "a3_free_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.1082586991285845,
+        "support_center": 2.67,
+        "amplitude": 0.012654201866970576,
+        "frequency": 4.730179451679547,
+        "phase": 5.6544862623493,
+        "cycle_count": 3,
+        "episode_seed": 68177928
+      }
+    },
+    {
+      "id": "a3_free_control_0006",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.06645681950743852,
+        "support_center": 2.67,
+        "amplitude": 0.015490575810389375,
+        "frequency": 5.329028350425866,
+        "phase": 6.0056000068903375,
+        "cycle_count": 3,
+        "episode_seed": 345427720
+      }
+    },
+    {
+      "id": "a3_free_control_0007",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.10260425610622201,
+        "support_center": 2.67,
+        "amplitude": 0.016439268354899155,
+        "frequency": 4.108341503333788,
+        "phase": 0.9978573944015552,
+        "cycle_count": 3,
+        "episode_seed": 2621576064
+      }
+    },
+    {
+      "id": "a3_free_control_0008",
+      "family": "a3_free_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.10694409212226122,
+        "support_center": 2.67,
+        "amplitude": 0.012743614807258885,
+        "frequency": 4.924074512278377,
+        "phase": 5.5795875960252586,
+        "cycle_count": 3,
+        "episode_seed": 1264522918
+      }
+    },
+    {
+      "id": "a3_free_control_0009",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.020096267379991938,
+        "support_center": 2.67,
+        "amplitude": 0.01770903786898106,
+        "frequency": 4.641052234553505,
+        "phase": 5.905627627322942,
+        "cycle_count": 3,
+        "episode_seed": 3386884685
+      }
+    },
+    {
+      "id": "a3_free_control_0010",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.0686057343785901,
+        "support_center": 2.67,
+        "amplitude": 0.013085356961577942,
+        "frequency": 4.731093386645881,
+        "phase": 4.825197897992802,
+        "cycle_count": 3,
+        "episode_seed": 3592413040
+      }
+    },
+    {
+      "id": "a3_free_control_0011",
+      "family": "a3_free_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.05862515410697322,
+        "support_center": 2.67,
+        "amplitude": 0.019463102646131037,
+        "frequency": 5.172237644596328,
+        "phase": 2.9852669444964093,
+        "cycle_count": 3,
+        "episode_seed": 1109309826
+      }
+    },
+    {
+      "id": "a3_free_control_0012",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.011202364819687838,
+        "support_center": 2.67,
+        "amplitude": 0.014001024420619556,
+        "frequency": 4.929401347730994,
+        "phase": 0.043130084729959085,
+        "cycle_count": 3,
+        "episode_seed": 1087015404
+      }
+    },
+    {
+      "id": "a3_free_control_0013",
+      "family": "a3_free_control",
+      "split": "validation",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.07308925438310468,
+        "support_center": 2.67,
+        "amplitude": 0.013182866605223501,
+        "frequency": 4.444153920357386,
+        "phase": 1.7161601124976,
+        "cycle_count": 3,
+        "episode_seed": 299648548
+      }
+    },
+    {
+      "id": "a3_free_control_0014",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.02914275576028532,
+        "support_center": 2.67,
+        "amplitude": 0.019240771221417947,
+        "frequency": 4.709041435707212,
+        "phase": 4.075316230261911,
+        "cycle_count": 3,
+        "episode_seed": 1546203437
+      }
+    },
+    {
+      "id": "a3_free_control_0015",
+      "family": "a3_free_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.000555858678575416,
+        "support_center": 2.67,
+        "amplitude": 0.015294920075446574,
+        "frequency": 4.966074244009671,
+        "phase": 2.8042671767702942,
+        "cycle_count": 3,
+        "episode_seed": 2458760296
+      }
+    },
+    {
+      "id": "a3_free_control_0016",
+      "family": "a3_free_control",
+      "split": "test",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.0727618801333678,
+        "support_center": 2.67,
+        "amplitude": 0.01339112886258637,
+        "frequency": 4.109639584826054,
+        "phase": 3.8992530688704115,
+        "cycle_count": 3,
+        "episode_seed": 1287891199
+      }
+    },
+    {
+      "id": "a3_free_control_0017",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.05141355504667907,
+        "support_center": 2.67,
+        "amplitude": 0.01665241911206627,
+        "frequency": 4.067739005608006,
+        "phase": 3.2445156023985517,
+        "cycle_count": 3,
+        "episode_seed": 3413423123
+      }
+    },
+    {
+      "id": "a3_free_control_0018",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": -0.017281779225301785,
+        "support_center": 2.67,
+        "amplitude": 0.013119627374434683,
+        "frequency": 4.697928709031018,
+        "phase": 1.9397415062757384,
+        "cycle_count": 3,
+        "episode_seed": 2800249463
+      }
+    },
+    {
+      "id": "a3_free_control_0019",
+      "family": "a3_free_control",
+      "split": "train",
+      "parameters": {
+        "kind": "a3_free_control",
+        "nominal_preload": 0.0,
+        "initial_qx": 2.67,
+        "initial_y": 0.09277270802861189,
+        "support_center": 2.67,
+        "amplitude": 0.01694424873038421,
+        "frequency": 4.207868065401005,
+        "phase": 1.9031710681507652,
+        "cycle_count": 3,
+        "episode_seed": 2611053328
+      }
+    }
+  ]
+}

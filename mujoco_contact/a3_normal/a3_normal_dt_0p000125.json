@@ -1,0 +1,60 @@
+{
+  "mujoco_version": "3.12.0",
+  "model_path": "/home/parallels/contact_mode_wm/mujoco_contact/models/wall_contact.xml",
+  "model_xml": "<mujoco model=\"wall_contact\">\n  <option\n    gravity=\"0 0 0\"\n    timestep=\"0.000125\"\n    cone=\"elliptic\"\n    solver=\"Newton\"\n    tolerance=\"1e-10\"\n    impratio=\"10\"\n    />\n\n  <default>\n    <geom friction=\"0.5 0.005 0.0001\" condim=\"3\"/>\n  </default>\n\n  <worldbody>\n    <light name=\"top_light\" pos=\"0 0 3\" dir=\"0 0 -1\" diffuse=\"1 1 1\"/>\n\n    <!-- Fixed wall: a vertical slab in the x-y plane, standing at x = 2 -->\n    <body name=\"wall\" pos=\"2 0 0\">\n      <geom name=\"wall_geom\" type=\"box\" size=\"0.1 5.0 0.2\" rgba=\"0.6 0.6 0.6 1\"/>\n    </body>\n\n    <!-- Movable object: free to translate in x and y -->\n    <body name=\"object\" pos=\"-1 0 0\">\n      <joint name=\"slide_x\" type=\"slide\" axis=\"1 0 0\" pos=\"0 0 0\"/>\n      <joint name=\"slide_y\" type=\"slide\" axis=\"0 1 0\" pos=\"0 0 0\"/>\n      <geom name=\"object_geom\" type=\"sphere\" size=\"0.15\" rgba=\"0.2 0.4 0.9 1\" mass=\"1.0\"/>\n    </body>\n  </worldbody>\n\n  <actuator>\n    <motor name=\"force_x\" joint=\"slide_x\" gear=\"1\"/>\n    <motor name=\"force_y\" joint=\"slide_y\" gear=\"1\"/>\n  </actuator>\n</mujoco>\n",
+  "timestep": 0.000125,
+  "steps": 32000,
+  "requested_duration": 4.0,
+  "actual_duration": 4.000000000002015,
+  "stiffness": 1000.0,
+  "damping": 30.0,
+  "nominal_preload": 10.0,
+  "support_rest": 2.76,
+  "amplitude": 0.02,
+  "frequency": 2.0,
+  "settle_time": 0.3,
+  "fade_time": 0.5,
+  "q_touch": 2.75,
+  "integrator": 0,
+  "solver": 2,
+  "solver_iteration_limit": 100,
+  "tolerance": 1e-10,
+  "impratio": 10.0,
+  "geom_solref": [
+    [
+      0.02,
+      1.0
+    ],
+    [
+      0.02,
+      1.0
+    ]
+  ],
+  "geom_solimp": [
+    [
+      0.9,
+      0.95,
+      0.001,
+      0.5,
+      2.0
+    ],
+    [
+      0.9,
+      0.95,
+      0.001,
+      0.5,
+      2.0
+    ]
+  ],
+  "warning_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "logging": "State/contact quantities at t; ctrl held over [t, t_next]; next state saved separately.",
+  "labels": "Normal-only raw labels; FREE is not a validated macroscopic-separation label."
+}

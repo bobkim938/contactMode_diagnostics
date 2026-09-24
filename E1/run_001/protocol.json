@@ -1,0 +1,170 @@
+{
+  "version": "1.0",
+  "calibration": {
+    "fit_preloads_N": [
+      8.0,
+      10.0,
+      12.0
+    ],
+    "validation_preloads_N": [
+      9.0,
+      11.0
+    ],
+    "subthreshold_ratios": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.96
+    ],
+    "settle_s": 0.3,
+    "ramp_s": 0.25,
+    "hold_s": 0.25,
+    "measurement_last_s": 0.1,
+    "quasi_ceiling_multiplier": 1.25,
+    "slide_floor_multiple_of_quasi": 4.0,
+    "minimum_slide_s": 0.02,
+    "quasi_sensitivity_multipliers": [
+      1.1,
+      1.25,
+      1.5
+    ],
+    "slide_sensitivity_multiples_of_primary_quasi": [
+      3.0,
+      4.0,
+      6.0
+    ],
+    "rho_primary": 0.98,
+    "rho_sensitivity": [
+      0.97,
+      0.98,
+      0.99
+    ],
+    "loaded_force_N": 0.1,
+    "loaded_force_sensitivity_N": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "a2": {
+    "preload_N": [
+      8.0,
+      12.0
+    ],
+    "initial_y_m": [
+      -0.15,
+      0.15
+    ],
+    "settle_s": 0.3,
+    "warmup_ramp_s": 0.2,
+    "warmup_hold_s": 0.2,
+    "low_ratio": [
+      0.3,
+      0.5
+    ],
+    "high_ratio": [
+      1.025,
+      1.04
+    ],
+    "rise_s": [
+      0.3,
+      0.4
+    ],
+    "high_hold_s": [
+      0.01,
+      0.02
+    ],
+    "fall_s": [
+      0.05,
+      0.08
+    ],
+    "low_hold_s": [
+      0.3,
+      0.5
+    ],
+    "control_high_ratio": [
+      0.75,
+      0.94
+    ],
+    "minimum_slide_dwell_s": 0.02,
+    "minimum_final_quasi_dwell_s": 0.05
+  },
+  "a3": {
+    "stiffness_N_m": 1000.0,
+    "damping_N_s_m": 30.0,
+    "nominal_preload_N": [
+      8.0,
+      12.0
+    ],
+    "initial_y_m": [
+      -0.15,
+      0.15
+    ],
+    "amplitude_m": [
+      0.015,
+      0.025
+    ],
+    "frequency_Hz": [
+      1.5,
+      2.5
+    ],
+    "settle_s": 0.3,
+    "fade_s": 0.5,
+    "discard_periods_after_fade": 1,
+    "contact_control_amplitude_m": [
+      0.001,
+      0.003
+    ],
+    "free_control_initial_gap_m": 0.08,
+    "free_control_amplitude_m": [
+      0.012,
+      0.02
+    ],
+    "free_control_frequency_Hz": [
+      4.0,
+      5.5
+    ],
+    "minimum_max_gap_m": 0.001,
+    "minimum_free_duration_s": 0.02,
+    "minimum_free_samples": 40,
+    "minimum_contact_duration_s": 0.05,
+    "recontact_impulse_window_s": 0.02,
+    "reference_step_ratio": 0.5,
+    "event_time_tolerance_s": 0.001,
+    "free_duration_tolerance_s": 0.001,
+    "gap_relative_tolerance": 0.02,
+    "gap_absolute_tolerance_m": 5e-05,
+    "impulse_relative_tolerance": 0.05,
+    "impulse_absolute_tolerance_Ns": 0.005,
+    "same_mode_state_max_error_m": 0.0001,
+    "same_mode_velocity_max_error_m_s": 0.01,
+    "gap_sensitivity_m": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "free_duration_sensitivity_s": [
+      0.01,
+      0.02,
+      0.04
+    ]
+  },
+  "startup_rule": {
+    "a2": "Exclude all intervals before the fixed settle + warmup ramp + warmup hold, 0.7 s.",
+    "a3": "Exclude settle and fade, then one full drive period; start at the next zero-phase ascending cycle boundary.",
+    "common": "Keep all rows. analysis_mask selects intervals wholly within the predefined analysis window; rejection excludes the whole episode from accepted splits."
+  },
+  "labels": {
+    "mode_codes": {
+      "FREE": 0,
+      "QUASI_STICK": 1,
+      "BOUNDARY": 2,
+      "SLIDE": 3,
+      "CONTACT": 4
+    },
+    "a2_event_rule": "Report [last confident source sample, first confident destination sample] as an interval, not an exact physical transition time.",
+    "a3_event_rule": "Geometric contact-flag entry/exit at sampled states; require resolved gap/duration and refinement agreement."
+  }
+}

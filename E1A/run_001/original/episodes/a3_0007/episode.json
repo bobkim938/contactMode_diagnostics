@@ -1,0 +1,191 @@
+{
+  "parameters": {
+    "kind": "a3",
+    "nominal_preload": 9.685780455130272,
+    "initial_qx": 2.75,
+    "initial_y": 0.0547743204821111,
+    "support_center": 2.7596857804551305,
+    "amplitude": 0.018520308851052877,
+    "frequency": 2.0034507324827926,
+    "phase": 5.7148753971521415,
+    "cycle_count": 3,
+    "episode_seed": 3222286058
+  },
+  "program": {
+    "analysis_start": 1.3434243764998264,
+    "analysis_end": 2.8408407847796675,
+    "duration": 2.8408407847796675,
+    "cycle_windows": [
+      [
+        1.3434243764998264,
+        1.8425631792597734
+      ],
+      [
+        1.8425631792597734,
+        2.3417019820197202
+      ],
+      [
+        2.3417019820197202,
+        2.8408407847796675
+      ]
+    ]
+  },
+  "signature": {
+    "model_sha256": "ae1f940119af8947d1af8b78e7667209821f74b9caa6e9673cddf48486f29dba",
+    "mujoco_version": "3.12.0",
+    "timestep": 0.000125,
+    "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+    "mu": 0.5
+  },
+  "steps": 22727,
+  "requested_steps": 22727,
+  "error": null,
+  "terminal": {
+    "time": 2.840875000000599,
+    "gap": -0.001756079837244684,
+    "contact_flag": true
+  },
+  "warning_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "solver_iteration_limit": 100,
+  "quality": {
+    "accepted": true,
+    "reasons": [],
+    "cycles": [
+      {
+        "cycle": 0,
+        "separation_intervals": 1,
+        "exit_s": 1.6224999999997807,
+        "entry_s": 1.8118749999996757,
+        "max_gap_m": 0.010924310417312455,
+        "free_duration_s": 0.18937500000000002,
+        "free_samples": 1515,
+        "contact_duration_s": 0.30975,
+        "recontact_impulse_Ns": 0.3963527424993827
+      },
+      {
+        "cycle": 1,
+        "separation_intervals": 1,
+        "exit_s": 2.12162499999972,
+        "entry_s": 2.3109999999999515,
+        "max_gap_m": 0.01092431257190496,
+        "free_duration_s": 0.18937500000000002,
+        "free_samples": 1515,
+        "contact_duration_s": 0.30975,
+        "recontact_impulse_Ns": 0.3962332552422623
+      },
+      {
+        "cycle": 2,
+        "separation_intervals": 1,
+        "exit_s": 2.62075000000033,
+        "entry_s": 2.8102500000005617,
+        "max_gap_m": 0.010924313476142977,
+        "free_duration_s": 0.1895,
+        "free_samples": 1516,
+        "contact_duration_s": 0.3095,
+        "recontact_impulse_Ns": 0.39719555268214296
+      }
+    ],
+    "events": [
+      {
+        "type": "contact_to_free",
+        "cycle": 0,
+        "time_s": 1.6224999999997807
+      },
+      {
+        "type": "free_to_contact",
+        "cycle": 0,
+        "time_s": 1.8118749999996757
+      },
+      {
+        "type": "contact_to_free",
+        "cycle": 1,
+        "time_s": 2.12162499999972
+      },
+      {
+        "type": "free_to_contact",
+        "cycle": 1,
+        "time_s": 2.3109999999999515
+      },
+      {
+        "type": "contact_to_free",
+        "cycle": 2,
+        "time_s": 2.62075000000033
+      },
+      {
+        "type": "free_to_contact",
+        "cycle": 2,
+        "time_s": 2.8102500000005617
+      }
+    ],
+    "refinement": {
+      "passed": true,
+      "reasons": [],
+      "comparisons": [
+        {
+          "cycle": 0,
+          "absolute_differences": {
+            "exit_s": 7.65831842386433e-13,
+            "entry_s": 6.25000011023058e-05,
+            "free_duration_s": 6.249999999999312e-05,
+            "max_gap_m": 1.1225468483644363e-06,
+            "recontact_impulse_Ns": 0.0006461952478055144
+          },
+          "limits": {
+            "exit_s": 0.001,
+            "entry_s": 0.001,
+            "free_duration_s": 0.001,
+            "max_gap_m": 0.0002185086592832164,
+            "recontact_impulse_Ns": 0.019849946887359412
+          },
+          "failed_metrics": []
+        },
+        {
+          "cycle": 1,
+          "absolute_differences": {
+            "exit_s": 1.0040857034709916e-12,
+            "entry_s": 6.250000033114489e-05,
+            "free_duration_s": 6.249999999999312e-05,
+            "max_gap_m": 1.1212217909672972e-06,
+            "recontact_impulse_Ns": 0.0006462894316609513
+          },
+          "limits": {
+            "exit_s": 0.001,
+            "entry_s": 0.001,
+            "free_duration_s": 0.001,
+            "max_gap_m": 0.00021850867587391853,
+            "recontact_impulse_Ns": 0.019843977233696165
+          },
+          "failed_metrics": []
+        },
+        {
+          "cycle": 2,
+          "absolute_differences": {
+            "exit_s": 7.691625114603085e-13,
+            "entry_s": 6.250000144225609e-05,
+            "free_duration_s": 6.249999999999312e-05,
+            "max_gap_m": 1.1201915519620798e-06,
+            "recontact_impulse_Ns": 0.0004354157573143169
+          },
+          "limits": {
+            "exit_s": 0.001,
+            "entry_s": 0.001,
+            "free_duration_s": 0.001,
+            "max_gap_m": 0.00021850867335389878,
+            "recontact_impulse_Ns": 0.019838006846241433
+          },
+          "failed_metrics": []
+        }
+      ]
+    }
+  },
+  "thresholds_sha256": "1e2b930991ac6276139c69aaaf9764fe2b529ea0de94cb09441d3645afc00f7d",
+  "role": "candidate"
+}

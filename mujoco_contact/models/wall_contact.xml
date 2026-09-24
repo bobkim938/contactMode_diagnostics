@@ -1,0 +1,35 @@
+<mujoco model="wall_contact">
+  <option
+    gravity="0 0 0"
+    timestep="0.000125"
+    cone="elliptic"
+    solver="Newton"
+    tolerance="1e-10"
+    impratio="10"
+    />
+
+  <default>
+    <geom friction="0.5 0.005 0.0001" condim="3"/>
+  </default>
+
+  <worldbody>
+    <light name="top_light" pos="0 0 3" dir="0 0 -1" diffuse="1 1 1"/>
+
+    <!-- Fixed wall: a vertical slab in the x-y plane, standing at x = 2 -->
+    <body name="wall" pos="2 0 0">
+      <geom name="wall_geom" type="box" size="0.1 5.0 0.2" rgba="0.6 0.6 0.6 1"/>
+    </body>
+
+    <!-- Movable object: free to translate in x and y -->
+    <body name="object" pos="-1 0 0">
+      <joint name="slide_x" type="slide" axis="1 0 0" pos="0 0 0"/>
+      <joint name="slide_y" type="slide" axis="0 1 0" pos="0 0 0"/>
+      <geom name="object_geom" type="sphere" size="0.15" rgba="0.2 0.4 0.9 1" mass="1.0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="force_x" joint="slide_x" gear="1"/>
+    <motor name="force_y" joint="slide_y" gear="1"/>
+  </actuator>
+</mujoco>

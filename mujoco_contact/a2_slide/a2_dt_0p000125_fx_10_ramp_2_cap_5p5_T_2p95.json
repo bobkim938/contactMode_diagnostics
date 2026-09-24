@@ -1,0 +1,70 @@
+{
+  "scenario": "A2",
+  "mujoco_version": "3.12.0",
+  "model_path": "/home/parallels/contact_mode_wm/mujoco_contact/models/wall_contact.xml",
+  "model_xml": "<mujoco model=\"wall_contact\">\n  <option\n    gravity=\"0 0 0\"\n    timestep=\"0.000125\"\n    cone=\"elliptic\"\n    solver=\"Newton\"\n    tolerance=\"1e-10\"\n    impratio=\"10\"\n    />\n\n  <default>\n    <geom friction=\"0.5 0.005 0.0001\" condim=\"3\"/>\n  </default>\n\n  <worldbody>\n    <light name=\"top_light\" pos=\"0 0 3\" dir=\"0 0 -1\" diffuse=\"1 1 1\"/>\n\n    <!-- Fixed wall: a vertical slab in the x-y plane, standing at x = 2 -->\n    <body name=\"wall\" pos=\"2 0 0\">\n      <geom name=\"wall_geom\" type=\"box\" size=\"0.1 5.0 0.2\" rgba=\"0.6 0.6 0.6 1\"/>\n    </body>\n\n    <!-- Movable object: free to translate in x and y -->\n    <body name=\"object\" pos=\"-1 0 0\">\n      <joint name=\"slide_x\" type=\"slide\" axis=\"1 0 0\" pos=\"0 0 0\"/>\n      <joint name=\"slide_y\" type=\"slide\" axis=\"0 1 0\" pos=\"0 0 0\"/>\n      <geom name=\"object_geom\" type=\"sphere\" size=\"0.15\" rgba=\"0.2 0.4 0.9 1\" mass=\"1.0\"/>\n    </body>\n  </worldbody>\n\n  <actuator>\n    <motor name=\"force_x\" joint=\"slide_x\" gear=\"1\"/>\n    <motor name=\"force_y\" joint=\"slide_y\" gear=\"1\"/>\n  </actuator>\n</mujoco>\n",
+  "timestep": 0.000125,
+  "steps": 23600,
+  "requested_duration": 2.95,
+  "actual_duration": 2.9500000000007325,
+  "normal_force": 10.0,
+  "ramp_rate": 2.0,
+  "force_cap": 5.5,
+  "settle_time": 0.3,
+  "q_touch": 2.75,
+  "rho_boundary": 0.98,
+  "quasi_stick_speed": 0.0005,
+  "slide_speed": 0.002,
+  "minimum_loaded_force": 0.1,
+  "integrator": 0,
+  "solver": 2,
+  "solver_iteration_limit": 100,
+  "tolerance": 1e-10,
+  "impratio": 10.0,
+  "geom_solref": [
+    [
+      0.02,
+      1.0
+    ],
+    [
+      0.02,
+      1.0
+    ]
+  ],
+  "geom_solimp": [
+    [
+      0.9,
+      0.95,
+      0.001,
+      0.5,
+      2.0
+    ],
+    [
+      0.9,
+      0.95,
+      0.001,
+      0.5,
+      2.0
+    ]
+  ],
+  "warning_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "diagnostics": {
+    "first_contact_loss_after_settling": null,
+    "first_boundary_after_settling": 2.750125000000488,
+    "first_slide_after_settling": 2.843125000000602,
+    "terminal_contact": true,
+    "terminal_gap": -0.00013365463320402782,
+    "has_post_settle_samples": true,
+    "minimum_post_settle_Fn": 9.999999972490869
+  },
+  "logging": "State/contact quantities at t; ctrl held over [t, time_next]; next state saved separately.",
+  "e1_note": "Use post_settle to identify startup exclusion. Keep diagnostics/labels separate from baseline inputs. No automatic cropping on contact loss."
+}

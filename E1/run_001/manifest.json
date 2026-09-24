@@ -1,0 +1,385 @@
+{
+  "version": "1.0",
+  "seed": 20260914,
+  "signature": {
+    "model_sha256": "b14661fda0f43ca066a008a8eabf5b64c0e5c6be974e4f64fa234e1d1b09ddeb",
+    "mujoco_version": "3.12.0",
+    "timestep": 0.000125,
+    "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+    "mu": 0.5
+  },
+  "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673",
+  "calibration_source": "/home/bob/contact_mode_diagnostic/E1/run_001/calibration/thresholds.json",
+  "complete": true,
+  "training_rule": "Use accepted episodes only, their analysis_mask & valid_transition rows, and the planned episode split. Never use calibration/verification traces as training examples.",
+  "episodes": [
+    {
+      "id": "a2_0000",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0000/trace.npz",
+      "metadata": "episodes/a2_0000/episode.json",
+      "raw_rows": 25353,
+      "eligible_rows": 19752,
+      "analysis_window_s": [
+        0.7,
+        3.1690983075657915
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0001",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0001/trace.npz",
+      "metadata": "episodes/a2_0001/episode.json",
+      "raw_rows": 25226,
+      "eligible_rows": 19625,
+      "analysis_window_s": [
+        0.7,
+        3.153161107693667
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0002",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0002/trace.npz",
+      "metadata": "episodes/a2_0002/episode.json",
+      "raw_rows": 24229,
+      "eligible_rows": 18628,
+      "analysis_window_s": [
+        0.7,
+        3.02852072649854
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0003",
+      "family": "a2",
+      "split_planned": "test",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0003/trace.npz",
+      "metadata": "episodes/a2_0003/episode.json",
+      "raw_rows": 26523,
+      "eligible_rows": 20922,
+      "analysis_window_s": [
+        0.7,
+        3.3152993929705117
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0004",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0004/trace.npz",
+      "metadata": "episodes/a2_0004/episode.json",
+      "raw_rows": 25165,
+      "eligible_rows": 19564,
+      "analysis_window_s": [
+        0.7,
+        3.145584639596955
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0005",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0005/trace.npz",
+      "metadata": "episodes/a2_0005/episode.json",
+      "raw_rows": 24725,
+      "eligible_rows": 19124,
+      "analysis_window_s": [
+        0.7,
+        3.0906209163309435
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0006",
+      "family": "a2",
+      "split_planned": "validation",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0006/trace.npz",
+      "metadata": "episodes/a2_0006/episode.json",
+      "raw_rows": 24959,
+      "eligible_rows": 19358,
+      "analysis_window_s": [
+        0.7,
+        3.1198214306719936
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_0007",
+      "family": "a2",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_0007/trace.npz",
+      "metadata": "episodes/a2_0007/episode.json",
+      "raw_rows": 25721,
+      "eligible_rows": 20120,
+      "analysis_window_s": [
+        0.7,
+        3.215000438630163
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0000",
+      "family": "a3",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0000/trace.npz",
+      "metadata": "episodes/a3_0000/episode.json",
+      "raw_rows": 26452,
+      "eligible_rows": 12044,
+      "analysis_window_s": [
+        1.8008449294330582,
+        3.3064291371901753
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0001",
+      "family": "a3",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0001/trace.npz",
+      "metadata": "episodes/a3_0001/episode.json",
+      "raw_rows": 27012,
+      "eligible_rows": 14968,
+      "analysis_window_s": [
+        1.5053484273129127,
+        3.3764176760778937
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0002",
+      "family": "a3",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0002/trace.npz",
+      "metadata": "episodes/a3_0002/episode.json",
+      "raw_rows": 23318,
+      "eligible_rows": 12102,
+      "analysis_window_s": [
+        1.401849780488653,
+        2.914744017316564
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0003",
+      "family": "a3",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0003/trace.npz",
+      "metadata": "episodes/a3_0003/episode.json",
+      "raw_rows": 22787,
+      "eligible_rows": 9872,
+      "analysis_window_s": [
+        1.6141794123960858,
+        2.8482632768719025
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0004",
+      "family": "a3",
+      "split_planned": "validation",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0004/trace.npz",
+      "metadata": "episodes/a3_0004/episode.json",
+      "raw_rows": 22728,
+      "eligible_rows": 11392,
+      "analysis_window_s": [
+        1.4168369121523972,
+        2.84088255215371
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_0005",
+      "family": "a3",
+      "split_planned": "test",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_0005/trace.npz",
+      "metadata": "episodes/a3_0005/episode.json",
+      "raw_rows": 28527,
+      "eligible_rows": 13495,
+      "analysis_window_s": [
+        1.8788230737137828,
+        3.5657792369561236
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_quasi_control_0000",
+      "family": "a2_quasi_control",
+      "split_planned": "validation",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_quasi_control_0000/trace.npz",
+      "metadata": "episodes/a2_quasi_control_0000/episode.json",
+      "raw_rows": 24361,
+      "eligible_rows": 18760,
+      "analysis_window_s": [
+        0.7,
+        3.0450901608554553
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_quasi_control_0001",
+      "family": "a2_quasi_control",
+      "split_planned": "test",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_quasi_control_0001/trace.npz",
+      "metadata": "episodes/a2_quasi_control_0001/episode.json",
+      "raw_rows": 24981,
+      "eligible_rows": 19380,
+      "analysis_window_s": [
+        0.7,
+        3.1225549093718703
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a2_quasi_control_0002",
+      "family": "a2_quasi_control",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a2_quasi_control_0002/trace.npz",
+      "metadata": "episodes/a2_quasi_control_0002/episode.json",
+      "raw_rows": 24972,
+      "eligible_rows": 19371,
+      "analysis_window_s": [
+        0.7,
+        3.121437115623183
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_contact_control_0000",
+      "family": "a3_contact_control",
+      "split_planned": "validation",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_contact_control_0000/trace.npz",
+      "metadata": "episodes/a3_contact_control_0000/episode.json",
+      "raw_rows": 21212,
+      "eligible_rows": 10335,
+      "analysis_window_s": [
+        1.3594950147684528,
+        2.6514877784880113
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_contact_control_0001",
+      "family": "a3_contact_control",
+      "split_planned": "test",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_contact_control_0001/trace.npz",
+      "metadata": "episodes/a3_contact_control_0001/episode.json",
+      "raw_rows": 31799,
+      "eligible_rows": 15859,
+      "analysis_window_s": [
+        1.9923032930206566,
+        3.9747874435448187
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_contact_control_0002",
+      "family": "a3_contact_control",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_contact_control_0002/trace.npz",
+      "metadata": "episodes/a3_contact_control_0002/episode.json",
+      "raw_rows": 27120,
+      "eligible_rows": 14025,
+      "analysis_window_s": [
+        1.636726631719062,
+        3.389898057308794
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_free_control_0000",
+      "family": "a3_free_control",
+      "split_planned": "train",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_free_control_0000/trace.npz",
+      "metadata": "episodes/a3_free_control_0000/episode.json",
+      "raw_rows": 13963,
+      "eligible_rows": 4793,
+      "analysis_window_s": [
+        1.1460792211760429,
+        1.7453331005996597
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_free_control_0001",
+      "family": "a3_free_control",
+      "split_planned": "test",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_free_control_0001/trace.npz",
+      "metadata": "episodes/a3_free_control_0001/episode.json",
+      "raw_rows": 13983,
+      "eligible_rows": 5281,
+      "analysis_window_s": [
+        1.0875966269577912,
+        1.7478309174668065
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    },
+    {
+      "id": "a3_free_control_0002",
+      "family": "a3_free_control",
+      "split_planned": "validation",
+      "accepted": true,
+      "reasons": [],
+      "trace": "episodes/a3_free_control_0002/trace.npz",
+      "metadata": "episodes/a3_free_control_0002/episode.json",
+      "raw_rows": 13956,
+      "eligible_rows": 4973,
+      "analysis_window_s": [
+        1.1227066062699214,
+        1.7444190209225252
+      ],
+      "thresholds_sha256": "921cf0883b4a0878f3091a6740fc15ecaa5ac6f0d0f3cc1641bb7ac917334673"
+    }
+  ]
+}

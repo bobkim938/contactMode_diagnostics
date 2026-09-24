@@ -1,0 +1,148 @@
+{
+  "parameters": {
+    "kind": "a2",
+    "mu": 0.5,
+    "preload": 9.0,
+    "initial_y": 0.0,
+    "initial_low_ratio": 0.4,
+    "cycles": [
+      {
+        "low_ratio": 0.4,
+        "high_ratio": 1.04,
+        "rise_s": 0.4,
+        "high_hold_s": 0.02,
+        "fall_s": 0.08,
+        "low_hold_s": 0.4
+      }
+    ]
+  },
+  "program": {
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 0.3,
+        "before": 0,
+        "after": 0,
+        "phase": "SETTLE",
+        "cycle": -1
+      },
+      {
+        "start": 0.3,
+        "end": 0.5,
+        "before": 0,
+        "after": 1.8,
+        "phase": "WARMUP_RAMP",
+        "cycle": -1
+      },
+      {
+        "start": 0.5,
+        "end": 0.7,
+        "before": 1.8,
+        "after": 1.8,
+        "phase": "WARMUP_HOLD",
+        "cycle": -1
+      },
+      {
+        "start": 0.7,
+        "end": 1.1,
+        "before": 1.8,
+        "after": 4.68,
+        "phase": "RAMP_UP",
+        "cycle": 0
+      },
+      {
+        "start": 1.1,
+        "end": 1.12,
+        "before": 4.68,
+        "after": 4.68,
+        "phase": "HIGH_HOLD",
+        "cycle": 0
+      },
+      {
+        "start": 1.12,
+        "end": 1.2000000000000002,
+        "before": 4.68,
+        "after": 1.8,
+        "phase": "RAMP_DOWN",
+        "cycle": 0
+      },
+      {
+        "start": 1.2000000000000002,
+        "end": 1.6,
+        "before": 1.8,
+        "after": 1.8,
+        "phase": "LOW_HOLD",
+        "cycle": 0
+      }
+    ],
+    "analysis_start": 0.7,
+    "analysis_end": 1.6,
+    "duration": 1.6,
+    "cycle_windows": [
+      [
+        0.7,
+        1.6
+      ]
+    ]
+  },
+  "signature": {
+    "model_sha256": "b14661fda0f43ca066a008a8eabf5b64c0e5c6be974e4f64fa234e1d1b09ddeb",
+    "mujoco_version": "3.12.0",
+    "timestep": 0.000125,
+    "protocol_sha256": "4bcdad4b3824f58889d6687a0d0b9aa1a439d7bf64a88ad2e27d5e6c79858b48",
+    "mu": 0.5
+  },
+  "steps": 12800,
+  "requested_steps": 12800,
+  "error": null,
+  "terminal": {
+    "time": 1.5999999999997931,
+    "gap": -0.0003443979621264859,
+    "contact_flag": true
+  },
+  "warning_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "solver_iteration_limit": 100,
+  "quality": {
+    "accepted": true,
+    "reasons": [],
+    "cycles": [
+      {
+        "cycle": 0,
+        "start": 0.7,
+        "end": 1.6,
+        "slide_intervals": 1,
+        "longest_slide_dwell_s": 0.10725,
+        "first_slide_s": 1.0502500000000978,
+        "return_quasi_s": 1.1862500000000225
+      }
+    ],
+    "events": [
+      {
+        "type": "quasi_to_slide",
+        "cycle": 0,
+        "time_interval_s": [
+          1.0038750000001235,
+          1.0502500000000978
+        ]
+      },
+      {
+        "type": "slide_to_quasi",
+        "cycle": 0,
+        "time_interval_s": [
+          1.1573750000000385,
+          1.1862500000000225
+        ]
+      }
+    ]
+  },
+  "thresholds_sha256": null,
+  "role": "calibration_only"
+}

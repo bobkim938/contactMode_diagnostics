@@ -1,0 +1,18 @@
+{
+  "primary": {
+    "loaded_force_N": 0.1
+  },
+  "sensitivity": {
+    "loaded_force_N": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "mode_codes": {
+    "FREE": 0,
+    "BOUNDARY": 2,
+    "CONTACT": 4
+  },
+  "note": "Fixed A3 force threshold, not calibrated A2 stick/slide thresholds."
+}
