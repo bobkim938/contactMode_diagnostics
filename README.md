@@ -1,5 +1,5 @@
 # Contact Mode Diagnostics
-This experiment investigates how the latent dynamics model behaves in changing contact regimes.
+This project investigates how a mode-agnostic neural dynamics model predicts state changes across contact regimes.
 We separate that into several questions:
 1. **E1:** Does prediction error concentrate near contact transitions?
 2. **E1A** How much does contact-onset regularization affect prediction error?
@@ -22,26 +22,56 @@ We deliberately used a minimal system to make the mechanisms and labels inspecta
 | A3 contact control | Normal dynamics without separation | Small support oscillations |
 | A3 free control | Dynamics without wall contact | Support motion sufficiently far from the wall |
 
+Dataset summary for both experiments:
+
+| Item | E1 | E1A |
+|---|---|---|
+| Accepted dataset | 23 episodes | 60 pairs / 120 primary episodes |
+| Train / validation / test | 13 / 5 / 5 episodes | 42 / 9 / 9 episodes per condition |
+| Rejection outcome | 0 rejected | 0 rejected pairs |
+| Split unit | Whole episode | Whole pair |
+
 ## E1 Experimental Design
 A2 normal preloads over 8-12 N and varied the tangential force schedule. It aimed to produce repeated transitions while returning to stable quasi-stick.
-A3 applied:
+A3 used a moving support to drive controlled separation and recontact. The applied forces were:
+```math
+F_x = k\,(x_{\text{support}} - q_x) + c\,(v_{\text{support}} - v_x), \qquad F_y = 0
+```
+with $`k = 1000\ \mathrm{N/m}`$ and $`c = 30\ \mathrm{N\,s/m}`$.
+
+The support initially remains stationary for 0.3 s, then its oscillation amplitude increases smoothly over 0.5 s. After this startup ramp, its motion is
 
 ```math
-F_x = 1000\,(x_{\text{support}} - q_x) + 30\,(v_{\text{support}} - v_x), \qquad F_y = 0
+t' = t - t_{\text{settle}}, \qquad t_{\text{settle}} = 0.3\ \mathrm{s}
 ```
 
 ```math
-x_{\text{support}}(t) = x_0 + A\sin(2\pi f t + \phi), \qquad v_{\text{support}}(t) = 2\pi f A\cos(2\pi f t + \phi)
+x_{\text{support}}(t) = x_0 + A\sin(2\pi f t' + \phi)
 ```
 
-For transition episodes, support amplitudes were 15-25 mm and frequencies 1.5-2.5 Hz. Initial tangential position, support phase, and nominal preload also varied. Episodes retained three analysis cycles.
+```math
+v_{\text{support}}(t) = 2\pi f A\cos(2\pi f t' + \phi)
+```
+
+The applied forces were
+
+```math
+F_x = k\,(x_{\text{support}} - q_x) + c\,(v_{\text{support}} - v_x), \qquad F_y = 0
+```
+
+with $`k = 1000\ \mathrm{N/m}`$ and $`c = 30\ \mathrm{N\,s/m}`$.
+
+These equations describe the full-amplitude motion; the implementation additionally includes the startup envelope and its derivative. Analysis excludes settling and the amplitude ramp, then one additional drive period, and begins at the next ascending zero-phase cycle boundary.
+
+For transition episodes (A3), support amplitudes were 15-25 mm and frequencies 1.5-2.5 Hz. Initial tangential position, support phase, and nominal preload also varied. Episodes retained three analysis cycles.
+
 Calibration was performed for labeling A2 so to reduce ambiguity on classification. The calibration procedures used:
 - Fit preloads: 8, 10, 12 N
 - Separate Validation preloads: 9, 11 N
 - Six subthreshold force ratios per preload (total: 30)
 - Five additional suprathreshold validation cases
 
-The fitted maximum creep speed was approximately $4.898 \times 10^{-4}$ ms. By the acquired max. speed, we use the frozen primary thresholds as:
+The maximum creep speed measured in the calibration fit cases was approximately $4.898 \times 10^{-4}$ m/s. We used this value to establish the primary thresholds listed below. These thresholds were frozen after separate calibration and before production episode generation and model fitting.
 
 | Quantity | Frozen value |
 |---|---|
@@ -50,17 +80,28 @@ The fitted maximum creep speed was approximately $4.898 \times 10^{-4}$ ms. By t
 | Friction-utilization boundary | $\rho = 0.98$ |
 | Loaded-contact force threshold | $F_n > 0.1$ N |
 
-Thus, for loaded A2 contact:
-- QUASI_STICK: low speed and $\rho < 0.98$
-- SLIDE: speed above the slide floor and $\rho >= 0.98$
-- BOUNDARY: remaining ambiguous cases
-
-## Learned Dynamics Baseline
-Both experiments used the same mode-agnostic MLP:
+Friction utilization is defined as
 
 ```math
-(q_x, q_y, v_x, v_y, F_x, F_y) \to (\delta q_x, \delta q_y, \delta v_x, \delta v_y)
+\rho = \frac{\lVert F_t \rVert}{\mu F_n}
 ```
+
+For geometrically active contact with $`F_n > 0.1\ \mathrm{N}`$, the operational A2 labels are:
+
+- **QUASI_STICK:** $`|v_y| \leq 6.122 \times 10^{-4}\ \mathrm{m/s}`$ and $`\rho < 0.98`$
+- **SLIDE:** $`|v_y| \geq 2.449 \times 10^{-3}\ \mathrm{m/s}`$ and $`\rho \geq 0.98`$
+- **BOUNDARY:** remaining ambiguous cases
+
+The boundary category preserves classification uncertainty. Sensitivity ranges were also frozen, but robustness of the prediction-error conclusions across those alternative thresholds remains to be evaluated.
+
+## Learned Dynamics Baseline
+Both experiments used the same mode-agnostic MLP architecture. E1A trained a separate model from scratch for each contact condition.
+
+```math
+(q_x, q_y, v_x, v_y, F_x, F_y) \to (\Delta q_x, \Delta q_y, \Delta v_x, \Delta v_y)
+```
+
+The model predicts the state increment over one simulation step. Evaluation uses the true current state as input; these results do not measure autonomous multistep rollout accuracy.
 
 Architecture uses three hidden layers of width 128 with SiLU activations. No mode labels, contact forces, event times, or support phase were supplied as additional inputs.
 
@@ -70,9 +111,20 @@ Training used:
 - Maximum 200 epochs
 - Early stopping patience of 20 epochs
 - Seed 42
-- Training-set normalization, reused for validation
+- Training-set normalization, reused for validation; E1A computes these stats separately for the original and modified conditions
 - Normalized MSE for optimization
 - Episode-balanced validation MSE for checkpoint selection
+
+All reported physical-unit errors are calculated after undoing target normalization. The error is
+```math
+e_i = \widehat{\Delta s}_i - \Delta s_i
+```
+
+Given the true current state, reconstructing the next state as $`\hat{s}_{i+1} = s_i + \widehat{\Delta s}_i`$ yields the same error:
+```math
+\hat{s}_{i+1} - s_{i+1} = \widehat{\Delta s}_i - \Delta s_i
+```
+Thus, the reported increment errors also represent one-step next-state prediction errors.
 
 ## E1 Result
 Across 5 validation episodes, sample-weighted component RMSE was:
@@ -89,7 +141,7 @@ Across 5 validation episodes, sample-weighted component RMSE was:
   <img src="E1/analysis/20260923_160152_584385/a3_0004_recontact_zoom.png" width="46.9%" alt="a3_0004 recontact zoom">
 </p>
 
-We observe $\pm 5$ ms recontact window contained 99.13% of the squared $v_x$ prediction error while covering only 2.10% of eligible samples. We also observe mode-dependent error structure for A2, however, slide $\to$ stick showed higher prediction error compared to stick $\to$ slide.
+In A3 validation episode `a3_0004`, we observe $\pm 5$ ms recontact window contained 99.13% of the squared $v_x$ prediction error while covering only 2.10% of eligible samples. We also observe mode-dependent error structure for A2, however, slide $\to$ quasi-stick showed higher prediction error compared to quasi-stick $\to$ slide.
 Therfore, E1 can be concluded that the prediction error can be strongly localized around recontact in this controlled simulator and model.
 
 ## E1A Experimental Design
@@ -117,7 +169,7 @@ Recontact was identified geometrically, and each condition's error was aligned t
 \tau = t_i - t_{\text{recontact}}
 ```
 
-We used primary window as $\pm 5$ ms, with sensitivity width $\pm 2, \pm 10, \pm 20$. We compute RMSE directly from the original sample to check whether sharp behavior persists upon contact.
+All error metrics are computed from unsmoothed, denormalized one-step prediction errors. The primary recontact window is $\pm 5$ ms, with sensitivity analyses at $\pm 2$, $\pm 10$, and $\pm 20$ ms. Each window is centered on the corresponding condition’s own geometric recontact event. The sensitivity analysis assesses whether the observed improvement depends strongly on the chosen window width.
 
 Validation results were:
 
@@ -131,9 +183,11 @@ Validation results were:
   <img src="E1A/analysis/figures/recontact_a3_0006_cycle0.png" width="80%" alt="a3_0006 recontact cycle 0, original vs modified">
 </p>
 
-Increasing the constraint regularization successfully eliminates the error spike at recontact, and this benefit persists over a wider window. However, this creates a trade-off: prediction accuracy deteriorates during other parts of the cyclic contact trajectory. This occurs because the added regularization shifts the overall learned error distribution.
+Regularizing contact onset substantially reduced recontact-window prediction error, and the improvement persisted across the evaluated window widths. However, accuracy changed unevenly across the cyclic trajectories: the modified model had lower error near recontact and during free flight, but higher error during shallow contact away from transitions.
 
-To isolate this effect, we analyzed the error across three distinct regions. Each region was defined dynamically based on the specific condition's trajectory:
+An exploratory regional analysis localized this deterioration. Its cause remains unresolved: the intervention changes the shallow-contact dynamics and the states visited during rollout, while training coverage and optimization may also contribute.
+
+To locate deterioration, we analyzed the error across three distinct regions. Each region was defined dynamically based on the specific condition's trajectory:
 
 | Trajectory Region | Selection Rule |
 | :--- | :--- |
