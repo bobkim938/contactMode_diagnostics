@@ -9,7 +9,7 @@ We deliberately used a minimal system to make the mechanisms and labels inspecta
 - A 1kg sphere with two translational DOF
 - $x$: normal to a fixed wall; $y$: tangential
 - No rotation, gravity, table, or robot
-- Friction coefficient $\mu$=0.5
+- Friction coefficient $\mu = 0.5$
 - Force motors acting along both coordinates
 - MuJoCo 3.12.0, Newton solver, elliptic friction cone, solver tolerance $10^{-10}$
 - Primary simulation and prediction interval: 0.125 ms
@@ -65,7 +65,7 @@ Both experiments used the same mode-agnostic MLP:
 Architecture uses three hidden layers of width 128 with SiLU activations. No mode labels, contact forces, event times, or support phase were supplied as additional inputs.
 
 Training used:
-- Adam, lr=$10^{-3}$
+- Adam, lr $= 10^{-3}$
 - Batch size: 1024
 - Maximum 200 epochs
 - Early stopping patience of 20 epochs
@@ -94,6 +94,7 @@ Therfore, E1 can be concluded that the prediction error can be strongly localize
 
 ## E1A Experimental Design
 We employ two conditions:
+
 | Condition | Contact `solimp` |
 |---|---|
 | Original | `[0.9, 0.95, 0.001, 0.5, 2]` |
@@ -102,6 +103,7 @@ We employ two conditions:
 Mass, support stiffness/damping, contact `solref`, primary timestep, and learning architecture were held fixed. Moreover, each pair shared its initial conditions, support-drive parameters, and splits. Actual force histories could differ, because the spring-damper controller depends on each trajectory's evolving state.
 
 E1A contains only A3 families:
+
 | Family | Pairs |
 |---|---|
 | Separation/recontact | 20 |
@@ -118,6 +120,7 @@ Recontact was identified geometrically, and each condition's error was aligned t
 We used primary window as $\pm 5$ ms, with sensitivity width $\pm 2, \pm 10, \pm 20$. We compute RMSE directly from the original sample to check whether sharp behavior persists upon contact.
 
 Validation results were:
+
 | A3 episode | Original ±5 ms RMSE | Modified ±5 ms RMSE | Reduction |
 |---|---|---|---|
 | a3_0006 | 0.5467 mm/s | 0.2090 mm/s | 61.8% |
@@ -127,6 +130,7 @@ Validation results were:
 <p align="center">
   <img src="E1A/analysis/figures/recontact_a3_0006_cycle0.png" width="80%" alt="a3_0006 recontact cycle 0, original vs modified">
 </p>
+
 Increasing the constraint regularization successfully eliminates the error spike at recontact, and this benefit persists over a wider window. However, this creates a trade-off: prediction accuracy deteriorates during other parts of the cyclic contact trajectory. This occurs because the added regularization shifts the overall learned error distribution.
 
 To isolate this effect, we analyzed the error across three distinct regions. Each region was defined dynamically based on the specific condition's trajectory:
@@ -138,8 +142,11 @@ To isolate this effect, we analyzed the error across three distinct regions. Eac
 | **Free flight** | Gap $> 0$ *(Must be >20 ms away from any separation or recontact)* |
 
 ### Performance Breakdown
-The table below shows the episode-balanced $v_x$ RMSE evaluated over the three A3 validation episodes. 
-*(Calculated as: $\mathrm{RMSE}_{R} = \sqrt{\tfrac{1}{3}\sum_j \mathrm{RMSE}_{j,R}^2}$)*
+The table below shows the episode-balanced $v_x$ RMSE evaluated over the three A3 validation episodes, calculated as:
+
+```math
+\mathrm{RMSE}_{R} = \sqrt{\tfrac{1}{3}\sum_{j} \mathrm{RMSE}_{j,R}^{2}}
+```
 
 | Region | Original (mm/s) | Modified (mm/s) | Change |
 | :--- | ---: | ---: | :--- |
@@ -147,4 +154,4 @@ The table below shows the episode-balanced $v_x$ RMSE evaluated over the three A
 | Shallow contact | 0.01673 | 0.03321 | **+98.5%** (Worse) |
 | Free flight | 0.006910 | 0.003749 | **−45.7%** (Better) |
 
-Change $= 100 \times (\mathrm{RMSE}_{\text{modified}} / \mathrm{RMSE}_{\text{original}} - 1)$. Negative values indicate an improvement.
+Change $`= 100 \times (\mathrm{RMSE}_{\text{modified}} / \mathrm{RMSE}_{\text{original}} - 1)`$. Negative values indicate an improvement.
