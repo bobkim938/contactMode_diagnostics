@@ -25,12 +25,15 @@ We deliberately used a minimal system to make the mechanisms and labels inspecta
 ## E1 Experimental Design
 A2 normal preloads over 8-12 N and varied the tangential force schedule. It aimed to produce repeated transitions while returning to stable quasi-stick.
 A3 applied:
-$$
-F_x = 1000(x_{support} - q_x) + 30(v_{support} - v_x), F_y = 0
-$$
-$$
-x_{support}(t) = x_0 + Asin(2\pi ft + \phi), v_{support}(t)=2\pi fAcos(2\pi ft + \phi)
-$$
+
+```math
+F_x = 1000\,(x_{\text{support}} - q_x) + 30\,(v_{\text{support}} - v_x), \qquad F_y = 0
+```
+
+```math
+x_{\text{support}}(t) = x_0 + A\sin(2\pi f t + \phi), \qquad v_{\text{support}}(t) = 2\pi f A\cos(2\pi f t + \phi)
+```
+
 For transition episodes, support amplitudes were 15-25 mm and frequencies 1.5-2.5 Hz. Initial tangential position, support phase, and nominal preload also varied. Episodes retained three analysis cycles.
 Calibration was performed for labeling A2 so to reduce ambiguity on classification. The calibration procedures used:
 - Fit preloads: 8, 10, 12 N
@@ -54,9 +57,11 @@ Thus, for loaded A2 contact:
 
 ## Learned Dynamics Baseline
 Both experiments used the same mode-agnostic MLP:
-$$
+
+```math
 (q_x, q_y, v_x, v_y, F_x, F_y) \to (\delta q_x, \delta q_y, \delta v_x, \delta v_y)
-$$
+```
+
 Architecture uses three hidden layers of width 128 with SiLU activations. No mode labels, contact forces, event times, or support phase were supplied as additional inputs.
 
 Training used:
@@ -105,9 +110,11 @@ E1A contains only A3 families:
 
 ## E1A Result
 Recontact was identified geometrically, and each condition's error was aligned to its own time event:
-$$
-\tau = t_i - t_{recontact}
-$$
+
+```math
+\tau = t_i - t_{\text{recontact}}
+```
+
 We used primary window as $\pm 5$ ms, with sensitivity width $\pm 2, \pm 10, \pm 20$. We compute RMSE directly from the original sample to check whether sharp behavior persists upon contact.
 
 Validation results were:
@@ -134,10 +141,10 @@ To isolate this effect, we analyzed the error across three distinct regions. Eac
 The table below shows the episode-balanced $v_x$ RMSE evaluated over the three A3 validation episodes. 
 *(Calculated as: $\mathrm{RMSE}_{R} = \sqrt{\tfrac{1}{3}\sum_j \mathrm{RMSE}_{j,R}^2}$)*
 
-| Region | Original (mm/s) | Modified (mm/s) | Change* |
+| Region | Original (mm/s) | Modified (mm/s) | Change |
 | :--- | ---: | ---: | :--- |
 | Near recontact | 0.6061 | 0.1985 | **−67.2%** (Better) |
 | Shallow contact | 0.01673 | 0.03321 | **+98.5%** (Worse) |
 | Free flight | 0.006910 | 0.003749 | **−45.7%** (Better) |
 
-*\*Change $= 100 \times (\mathrm{RMSE}_{\text{modified}} / \mathrm{RMSE}_{\text{original}} - 1)$. Negative values indicate an improvement.*
+Change $= 100 \times (\mathrm{RMSE}_{\text{modified}} / \mathrm{RMSE}_{\text{original}} - 1)$. Negative values indicate an improvement.
