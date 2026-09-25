@@ -1,4 +1,4 @@
-"""E1A task 4: prediction error near recontact against error away from it.
+"""E1A: prediction error near recontact against error away from it.
 
 The +-5 ms window is the primary one, frozen before any of this was run;
 the other widths are declared here as predefined sensitivities, not
@@ -128,7 +128,7 @@ def print_primary(bundles, episodes, families, half_width_s):
             a, b = rows["original"], rows["modified"]
             note = ""
             if b["rmse_outside"] > a["rmse_outside"]:
-                note = "   <- BACKGROUND WORSE: read concentration with care"
+                note = "   <- BACKGROUND WORSE"
             print(f"  {'':<26}{'delta':>10}{'':>4}"
                   f"{b['rmse_inside'] - a['rmse_inside']:>+11.6f}"
                   f"{b['rmse_outside'] - a['rmse_outside']:>+11.6f}"

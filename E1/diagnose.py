@@ -11,13 +11,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "model"))
 from model import dynamicsMLP
 from dataset import E1Dataset
 
-ANALYSIS_DIR = Path(__file__).resolve().parent / "analysis"
+CHECKPOINT_DIR = (
+    Path(__file__).resolve().parent / "training_runs" / "20260921_102817_303959"
+)
+# Outputs are grouped per checkpoint, e.g. analysis/20260921_102817_303959/
+ANALYSIS_DIR = Path(__file__).resolve().parent / "analysis" / CHECKPOINT_DIR.name
 
 # Timing convention, used consistently by everything below: a sample is
-# indexed by t_i, the START of the prediction interval [t_i, t_i+1]. So a
-# signal read alongside the error (normal force, gap, mode) is the state
-# entering the step, and an event window selects the steps that BEGIN
-# inside it -- not those that end inside it.
+# indexed by t_i, the START of the prediction interval [t_i, t_i+1]]
 
 MODE_LABELS = {
     0: "Free",
@@ -28,11 +29,11 @@ MODE_LABELS = {
 }
 
 MODE_COLORS = {
-    0: "blue",
-    1: "green",
-    2: "purple",
-    3: "orange",
-    4: "yellow",
+    0: "#0072B2",  # Free        – blue
+    1: "#009E73",  # Quasi-stick – green
+    2: "#CC79A7",  # Boundary    – pink/purple
+    3: "#D55E00",  # Slide       – vermillion (red-orange)
+    4: "#7F7F7F",  # Contact     – neutral gray
 }
 
 INK = "black"
@@ -43,12 +44,7 @@ WINDOW = "orange"
 def init_model():
     model = dynamicsMLP()
 
-    path = (
-        Path(__file__).resolve().parent
-        / "training_runs"
-        / "20260921_102817_303959"
-        / "best.pt"
-    )
+    path = CHECKPOINT_DIR / "best.pt"
 
     checkpoint = torch.load(path, map_location="cpu")
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -627,7 +623,7 @@ if __name__ == "__main__":
 
     plt.tight_layout()
 
-    ANALYSIS_DIR.mkdir(exist_ok=True)
+    ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
     figure_path = ANALYSIS_DIR / "rmse_comparison.png"
     fig.savefig(figure_path, dpi=200, bbox_inches="tight")
     print("Saved figure to:", figure_path)

@@ -1,4 +1,4 @@
-"""E1A task 3: the recontact close-up, each condition on its own event clock.
+"""E1A: the recontact close-up, each condition on its own event clock.
 
 Every quantity is plotted against
 

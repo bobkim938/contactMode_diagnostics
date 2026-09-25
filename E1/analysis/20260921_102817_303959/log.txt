@@ -1,0 +1,21 @@
+episode                   mode            steps   pos RMSE (um)   vel RMSE (mm/s)
+a2_0006                   Quasi-stick     15609         0.04257          0.002833
+a2_0006                   Boundary         1775          0.1452           0.01264
+a2_0006                   Slide            1974          0.2035          0.004973
+a3_0004                   Free             4426          0.2982           0.08775
+a3_0004                   Boundary          427         0.02871          0.007883
+a3_0004                   Contact          6539          0.1294           0.07542
+a2_quasi_control_0000     Quasi-stick     18760         0.05033          0.002151
+a3_contact_control_0000   Contact         10335          0.1717          0.002928
+a3_free_control_0002      Free             4973           1.147           0.03443
+
+a3_0004 — ±5 ms recontact windows
+  samples in windows      239 / 11392  =   2.10%
+  squared v_x error                     =  99.13%
+  concentration                         =   47.2x
+
+a3_0004 — recontact 0, ±4 ms, 65 samples
+  peak true  Δv_x     -3.5229 mm/s at tᵢ +0.000 ms
+  peak pred  Δv_x     -3.2081 mm/s at tᵢ +2.000 ms
+  magnitude captured   50.92% of the true peak, at the true peak's step
+  timing lag          +2.000 ms
