@@ -33,13 +33,7 @@ Dataset summary for both experiments:
 
 ## E1 Experimental Design
 A2 normal preloads over 8-12 N and varied the tangential force schedule. It aimed to produce repeated transitions while returning to stable quasi-stick.
-A3 used a moving support to drive controlled separation and recontact. The applied forces were:
-```math
-F_x = k\,(x_{\text{support}} - q_x) + c\,(v_{\text{support}} - v_x), \qquad F_y = 0
-```
-with $`k = 1000\ \mathrm{N/m}`$ and $`c = 30\ \mathrm{N\,s/m}`$.
-
-The support initially remains stationary for 0.3 s, then its oscillation amplitude increases smoothly over 0.5 s. After this startup ramp, its motion is
+A3 used a moving support to drive controlled separation and recontact. The support initially remains stationary for 0.3 s, then its oscillation amplitude increases smoothly over 0.5 s. After this startup ramp, its motion is
 
 ```math
 t' = t - t_{\text{settle}}, \qquad t_{\text{settle}} = 0.3\ \mathrm{s}
@@ -185,7 +179,7 @@ Validation results were:
 
 Regularizing contact onset substantially reduced recontact-window prediction error, and the improvement persisted across the evaluated window widths. However, accuracy changed unevenly across the cyclic trajectories: the modified model had lower error near recontact and during free flight, but higher error during shallow contact away from transitions.
 
-An exploratory regional analysis localized this deterioration. Its cause remains unresolved: the intervention changes the shallow-contact dynamics and the states visited during rollout, while training coverage and optimization may also contribute.
+An exploratory regional analysis localized this deterioration. Its cause remains unresolved: the intervention changes the shallow-contact dynamics and the simulated trajectories, while training coverage and optimization may also contribute.
 
 To locate deterioration, we analyzed the error across three distinct regions. Each region was defined dynamically based on the specific condition's trajectory:
 

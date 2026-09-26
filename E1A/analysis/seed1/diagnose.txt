@@ -1,0 +1,29 @@
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed1/20260925_201545_375046_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed1/20260925_201953_746610_modified/best.pt
+################################################################################
+RMSE for each target dimension (original model): tensor([1.7799e-07, 9.0299e-04, 5.1481e-05, 1.5209e-03], dtype=torch.float64)
+RMSE for each target dimension (modified model): tensor([1.3720e-07, 1.0097e-03, 1.9285e-05, 7.2765e-04], dtype=torch.float64)
+################################################################################
+
+Per-episode v_x RMSE, matched by episode identifier
+
+  [a3]  separation / recontact   v_x RMSE in mm/s
+    episode                           original      modified   modified - original    change
+    a3_0006                           0.057815      0.027730             -0.030085    -52.0%
+    a3_0007                           0.077088      0.031652             -0.045436    -58.9%
+    a3_0017                           0.096794      0.023549             -0.073245    -75.7%
+    family (episode-balanced)         0.078855      0.027841             -0.051014    -64.7%
+
+  [a3_contact_control]  sustained-contact control   v_x RMSE in mm/s
+    episode                           original      modified   modified - original    change
+    a3_contact_control_0005           0.001990      0.002940             +0.000950    +47.8%
+    a3_contact_control_0012           0.002118      0.003166             +0.001048    +49.5%
+    a3_contact_control_0016           0.004731      0.004892             +0.000161     +3.4%
+    family (episode-balanced)         0.003206      0.003768             +0.000563    +17.5%
+
+  [a3_free_control]  free-flight control   v_x RMSE in mm/s
+    episode                           original      modified   modified - original    change
+    a3_free_control_0008              0.006049      0.010121             +0.004072    +67.3%
+    a3_free_control_0011              0.012745      0.012264             -0.000481     -3.8%
+    a3_free_control_0013              0.005417      0.010075             +0.004658    +86.0%
+    family (episode-balanced)         0.008725      0.010868             +0.002143    +24.6%

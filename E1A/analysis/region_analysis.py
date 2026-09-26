@@ -20,10 +20,12 @@ Calculates the balanced regional RMSE and its percentage change.
 3. Comparison: Calculates the percentage change as:
    change = 100 * ((RMSE_modified / RMSE_original) - 1)
 
-Note: A negative change indicates an improvement; a positive change 
+A negative change indicates an improvement; a positive change 
 indicates a deterioration.
 
-    python E1A/analysis/region_analysis.py
+    python E1A/analysis/region_analysis.py --seed 0
+
+The report is also saved to E1A/analysis/seed<N>/region_analysis.txt.
 """
 
 import argparse
@@ -36,8 +38,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
-from diagnose import (RUN_ROOT, init_model, load_dataset, compute_predictions,
-                      episode_families)
+from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
+                      log_to, seed_output_dir)
 from recontact_zoom import episode_signals
 from window_analysis import CONDITIONS, PRIMARY_WINDOW_S, geometric_recontacts
 
@@ -179,24 +181,16 @@ def main():
                         help="exclusion around every transition, s")
     parser.add_argument("--shallow", type=float, default=SHALLOW_MM,
                         help="maximum penetration for shallow contact, mm")
+    parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
+                        help="Which training_runs/seed<N>/ to evaluate.")
     args = parser.parse_args()
 
-    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model()
-    bundles = {}
-    for condition, model, checkpoint, is_modified in (
-        ("original", model_0, checkpoint_0, False),
-        ("modified", model_0_9, checkpoint_0_9, True),
-    ):
-        if checkpoint["config"]["variant"] != condition:
-            raise SystemExit(
-                f"Checkpoint says {checkpoint['config']['variant']!r} but was "
-                f"loaded as {condition!r}."
-            )
-        stats = {name: tensor.detach().cpu().numpy()
-                 for name, tensor in checkpoint["normalization_stats"].items()}
-        dataset = load_dataset(stats, is_modified)
-        predicted, target = compute_predictions(model, dataset, stats)
-        bundles[condition] = (dataset, predicted, target)
+    with log_to(seed_output_dir(args.seed) / "region_analysis.txt"):
+        run(args)
+
+
+def run(args):
+    bundles = load_bundles(args.seed)
 
     families = episode_families()
     episodes = [

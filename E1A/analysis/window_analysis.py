@@ -17,7 +17,9 @@ Two traps this report is built to avoid:
 Each condition uses its OWN geometric recontact instants, since the two
 do not re-touch at the same moment.
 
-    python E1A/analysis/window_analysis.py
+    python E1A/analysis/window_analysis.py --seed 0
+
+The report is also saved to E1A/analysis/seed<N>/window_analysis.txt.
 """
 
 import argparse
@@ -31,8 +33,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
-from diagnose import (RUN_ROOT, init_model, load_dataset, compute_predictions,
-                      episode_families, FAMILY_ORDER, FAMILY_LABELS)
+from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
+                      log_to, seed_output_dir, FAMILY_ORDER, FAMILY_LABELS)
 from recontact_zoom import episode_signals
 
 PRIMARY_WINDOW_S = 0.005
@@ -170,24 +172,16 @@ def main():
     parser.add_argument("--primary", type=float, default=PRIMARY_WINDOW_S)
     parser.add_argument("--windows", type=float, nargs="+",
                         default=list(SENSITIVITY_WINDOWS_S))
+    parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
+                        help="Which training_runs/seed<N>/ to evaluate.")
     args = parser.parse_args()
 
-    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model()
-    bundles = {}
-    for condition, model, checkpoint, is_modified in (
-        ("original", model_0, checkpoint_0, False),
-        ("modified", model_0_9, checkpoint_0_9, True),
-    ):
-        if checkpoint["config"]["variant"] != condition:
-            raise SystemExit(
-                f"Checkpoint says {checkpoint['config']['variant']!r} but was "
-                f"loaded as {condition!r}."
-            )
-        stats = {name: tensor.detach().cpu().numpy()
-                 for name, tensor in checkpoint["normalization_stats"].items()}
-        dataset = load_dataset(stats, is_modified)
-        predicted, target = compute_predictions(model, dataset, stats)
-        bundles[condition] = (dataset, predicted, target)
+    with log_to(seed_output_dir(args.seed) / "window_analysis.txt"):
+        run(args)
+
+
+def run(args):
+    bundles = load_bundles(args.seed)
 
     families = episode_families()
     episodes = [Path(p).parent.name for p in bundles["original"][0].episode_paths]

@@ -9,7 +9,9 @@ where t_recontact is that condition's own geometric recontact instant.
 Figures show raw samples. A light moving average is drawn over them as a
 guide, but every number reported here comes from the unsmoothed error.
 
-    python E1A/analysis/recontact_zoom.py
+    python E1A/analysis/recontact_zoom.py --seed 0
+
+Figures and the printed metrics go to E1A/analysis/seed<N>/.
 """
 
 import argparse
@@ -23,15 +25,13 @@ import numpy as np
 E1A = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(E1A))
 
-from diagnose import (RUN_ROOT, init_model, load_dataset, compute_predictions,
-                      episode_families)
+from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
+                      log_to, seed_output_dir)
 
 CONDITIONS = ("original", "modified")
 COLORS = {"original": "#1f77b4", "modified": "#ff7f0e"}
 INK = "black"
 INK_MUTED = "gray"
-
-FIGURE_DIR = Path(__file__).resolve().parent / "figures"
 
 
 def recontact_times(identifier, condition):
@@ -217,25 +217,20 @@ def main():
     parser.add_argument("--metric-halfwidth", type=float, default=0.050,
                         help="Wider window, so the baseline has far-field samples.")
     parser.add_argument("--threshold-factor", type=float, default=3.0)
-    parser.add_argument("--output-dir", type=Path, default=FIGURE_DIR)
+    parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
+                        help="Which training_runs/seed<N>/ to evaluate.")
+    parser.add_argument("--output-dir", type=Path, default=None,
+                        help="Defaults to E1A/analysis/seed<N>/figures.")
     args = parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = seed_output_dir(args.seed) / "figures"
 
-    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model()
-    bundles = {}
-    for condition, model, checkpoint, is_modified in (
-        ("original", model_0, checkpoint_0, False),
-        ("modified", model_0_9, checkpoint_0_9, True),
-    ):
-        if checkpoint["config"]["variant"] != condition:
-            raise SystemExit(
-                f"Checkpoint says {checkpoint['config']['variant']!r} but was "
-                f"loaded as {condition!r}."
-            )
-        stats = {name: tensor.detach().cpu().numpy()
-                 for name, tensor in checkpoint["normalization_stats"].items()}
-        dataset = load_dataset(stats, is_modified)
-        predicted, target = compute_predictions(model, dataset, stats)
-        bundles[condition] = (dataset, predicted, target)
+    with log_to(seed_output_dir(args.seed) / "recontact_zoom.txt"):
+        run(args)
+
+
+def run(args):
+    bundles = load_bundles(args.seed)
 
     families = episode_families()
     dataset = bundles["original"][0]
@@ -271,8 +266,7 @@ def main():
 
         shift = (windows["modified"]["event_time"]
                  - windows["original"]["event_time"]) * 1e3
-        print(f"  {'':<10}{'':>4}{'event shift':>11}{shift:>+14.4f} ms"
-              "   <- why each condition uses its own clock")
+        print(f"  {'':<10}{'':>4}{'event shift':>11}{shift:>+14.4f} ms")
 
         plot_episode(windows, identifier, args.cycle,
                      args.output_dir / f"recontact_{identifier}_cycle{args.cycle}.png")

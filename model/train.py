@@ -47,6 +47,12 @@ def parse_args():
         default="run_001",
         help="Dataset directory inside the experiment.",
     )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Seed for weight init and training shuffle order.",
+    )
     return parser.parse_args()
 
 
@@ -183,7 +189,7 @@ def main():
     print("Dataset:", dataset_root)
 
     # 1. Configuration
-    seed = 42
+    seed = args.seed
     batch_size = 1024
     learning_rate = 1e-3
     max_epochs = 200

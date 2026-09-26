@@ -1,0 +1,22 @@
+{
+  "epochs_completed": 86,
+  "stopped_early": true,
+  "best_epoch": 66,
+  "best_validation_episode_loss": 0.0007755829474780465,
+  "restored_validation_metrics": {
+    "sample_mean": 0.0009746738151656209,
+    "episode_mean": 0.0007755829474780465,
+    "per_episode": {
+      "episodes/a3_0006/trace.npz": 0.0012397424062017795,
+      "episodes/a3_0007/trace.npz": 0.0021696950123562112,
+      "episodes/a3_0017/trace.npz": 0.0034183283415408225,
+      "episodes/a3_contact_control_0005/trace.npz": 5.7315153501152465e-06,
+      "episodes/a3_contact_control_0012/trace.npz": 5.421172227830684e-06,
+      "episodes/a3_contact_control_0016/trace.npz": 1.0089451686360897e-05,
+      "episodes/a3_free_control_0008/trace.npz": 3.801455757711881e-05,
+      "episodes/a3_free_control_0011/trace.npz": 7.343088595636568e-05,
+      "episodes/a3_free_control_0013/trace.npz": 1.979318440581429e-05
+    }
+  },
+  "checkpoint_verified": true
+}

@@ -1,0 +1,13 @@
+{
+  "experiment": "E1A",
+  "variant": "modified",
+  "seed": 2,
+  "batch_size": 1024,
+  "learning_rate": 0.001,
+  "max_epochs": 200,
+  "patience": 20,
+  "dataset_root": "/Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/run_001/modified",
+  "selection_metric": "validation_episode_mean",
+  "model_class": "dynamicsMLP",
+  "model_description": "dynamicsMLP(\n  (network): Sequential(\n    (0): Linear(in_features=6, out_features=128, bias=True)\n    (1): SiLU()\n    (2): Linear(in_features=128, out_features=128, bias=True)\n    (3): SiLU()\n    (4): Linear(in_features=128, out_features=128, bias=True)\n    (5): SiLU()\n    (6): Linear(in_features=128, out_features=4, bias=True)\n  )\n)"
+}

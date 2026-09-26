@@ -1,3 +1,5 @@
+import argparse
+import contextlib
 import json
 import torch
 from torch.utils.data import Dataset, DataLoader
@@ -12,6 +14,10 @@ from dataset import E1Dataset
 
 ANALYSIS_DIR = Path(__file__).resolve().parent / "analysis"
 
+TRAINING_RUNS = Path(__file__).resolve().parent / "training_runs"
+
+DEFAULT_SEED = 42
+
 RUN_ROOT = Path(__file__).resolve().parent / "run_001"
 
 FAMILY_ORDER = ("a3", "a3_contact_control", "a3_free_control")
@@ -21,36 +27,70 @@ FAMILY_LABELS = {
     "a3_free_control": "free-flight control",
 }
 
-def init_model():
-    model_0 = dynamicsMLP()
-    model_0_9 = dynamicsMLP()
+def checkpoint_path(seed, variant):
+    """
+    The one best.pt for this seed and variant, from training_runs/seed<N>/
+    """
+    seed_dir = TRAINING_RUNS / f"seed{seed}"
+    paths = sorted(seed_dir.glob(f"*_{variant}/best.pt"))
+    if len(paths) != 1:
+        raise SystemExit(
+            f"Expected one {variant} run in {seed_dir}, found {len(paths)}."
+        )
+    return paths[0]
 
-    path_0 = (
-        Path(__file__).resolve().parent
-        / "training_runs"
-        / "20260923_154021_752705_original"
-        / "best.pt"
-    )
 
-    path_0_9 = (
-        Path(__file__).resolve().parent
-        / "training_runs"
-        / "20260923_154352_404540_modified"
-        / "best.pt"
-    )
+def seed_output_dir(seed):
+    """
+    analysis/seed<N>/, where every result for this seed is written. Both
+    runs are checked first, so a mistyped seed leaves no empty directory.
+    """
+    for variant in ("original", "modified"):
+        checkpoint_path(seed, variant)
+    return ANALYSIS_DIR / f"seed{seed}"
 
-    checkpoint_0 = torch.load(path_0, map_location="cpu")
-    model_0.load_state_dict(checkpoint_0["model_state_dict"])
-    model_0.eval()
 
-    print("Model loaded from:", path_0)
+class _Tee:
+    def __init__(self, *streams):
+        self.streams = streams
 
-    checkpoint_0_9 = torch.load(path_0_9, map_location="cpu")
-    model_0_9.load_state_dict(checkpoint_0_9["model_state_dict"])
-    model_0_9.eval()
+    def write(self, text):
+        for stream in self.streams:
+            stream.write(text)
 
-    print("Model loaded from:", path_0_9)
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()
 
+
+@contextlib.contextmanager
+def log_to(path):
+    """Print as usual and keep a copy of everything printed in path"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w") as log, contextlib.redirect_stdout(_Tee(sys.stdout, log)):
+        yield
+    print("Saved log to:", path)
+
+
+def init_model(seed=DEFAULT_SEED):
+    loaded = []
+    for variant in ("original", "modified"):
+        path = checkpoint_path(seed, variant)
+        checkpoint = torch.load(path, map_location="cpu")
+        if checkpoint["config"]["seed"] != seed:
+            raise SystemExit(
+                f"{path} was trained with seed {checkpoint['config']['seed']}, "
+                f"not {seed}."
+            )
+
+        model = dynamicsMLP()
+        model.load_state_dict(checkpoint["model_state_dict"])
+        model.eval()
+        print("Model loaded from:", path)
+
+        loaded += [model, checkpoint]
+
+    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = loaded
     return model_0, checkpoint_0, model_0_9, checkpoint_0_9
 
 def load_dataset(norm_stats, is_modified=False):
@@ -91,6 +131,39 @@ def compute_predictions(model, dataset, norm_stats, batch_size=1024):
             target_list.append(targets * target_scale + target_mean)
 
     return torch.cat(predicted_list, dim=0), torch.cat(target_list, dim=0)
+
+def available_seeds():
+    """Every seed with a training_runs/seed<N>/ directory, in numeric order"""
+    return sorted(
+        int(path.name[len("seed"):])
+        for path in TRAINING_RUNS.glob("seed*")
+        if path.is_dir() and path.name[len("seed"):].isdigit()
+    )
+
+
+def load_bundles(seed=DEFAULT_SEED):
+    """
+    condition -> (validation dataset, predicted, target) for this seed's
+    original and modified models, each on its own condition's data
+    """
+    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model(seed)
+    bundles = {}
+    for condition, model, checkpoint, is_modified in (
+        ("original", model_0, checkpoint_0, False),
+        ("modified", model_0_9, checkpoint_0_9, True),
+    ):
+        if checkpoint["config"]["variant"] != condition:
+            raise SystemExit(
+                f"Checkpoint says {checkpoint['config']['variant']!r} but was "
+                f"loaded as {condition!r}."
+            )
+        stats = {name: tensor.detach().cpu().numpy()
+                 for name, tensor in checkpoint["normalization_stats"].items()}
+        dataset = load_dataset(stats, is_modified)
+        predicted, target = compute_predictions(model, dataset, stats)
+        bundles[condition] = (dataset, predicted, target)
+    return bundles
+
 
 def episode_families(run_root=RUN_ROOT):
     """
@@ -160,8 +233,8 @@ def print_family_vx_comparison(
               f"{after - before:>+22.6f}{change:>+10.1%}")
 
 
-if __name__ == "__main__":
-    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model()
+def main(seed):
+    model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model(seed)
     norm_state_0 = {
         name: tensor.detach().cpu().numpy()
         for name, tensor in checkpoint_0["normalization_stats"].items()
@@ -198,12 +271,14 @@ if __name__ == "__main__":
         label_modified=checkpoint_0_9["config"]["variant"],
     )
 
-    
 
-    
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="E1A: original against modified, for one training seed."
+    )
+    parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
+                        help="Which training_runs/seed<N>/ to evaluate.")
+    args = parser.parse_args()
 
-    
-
-
-
-
+    with log_to(seed_output_dir(args.seed) / "diagnose.txt"):
+        main(args.seed)
