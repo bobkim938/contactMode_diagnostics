@@ -57,13 +57,6 @@ def parse_args():
 
 
 def resolve_experiment(args):
-    """
-    Locate the dataset to read and the directory to write runs into.
-
-    This file lives in model/, which holds no data and no runs: both
-    sides resolve against the project root so a run is always stored
-    beside the data it was trained on.
-    """
     project_root = Path(__file__).resolve().parent.parent
     experiment_dir = project_root / args.experiment
     variants = EXPERIMENTS[args.experiment]["variants"]
@@ -89,7 +82,7 @@ def resolve_experiment(args):
     if variant:
         run_name = f"{run_name}_{variant}"
 
-    return dataset_root, experiment_dir / "training_runs" / run_name, variant
+    return dataset_root, experiment_dir / "training_runs" / f"seed{args.seed}" / run_name, variant
 
 
 def train_one_epoch(model, loader, loss_fn, optimizer, device):
