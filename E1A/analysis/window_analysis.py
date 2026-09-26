@@ -18,8 +18,10 @@ Each condition uses its OWN geometric recontact instants, since the two
 do not re-touch at the same moment.
 
     python E1A/analysis/window_analysis.py --seed 0
+    python E1A/analysis/window_analysis.py --seed 0 --split test
 
-The report is also saved to E1A/analysis/seed<N>/window_analysis.txt.
+The report is also saved to E1A/analysis/seed<N>/window_analysis.txt, or
+E1A/analysis/test_split/seed<N>/ with --split test.
 """
 
 import argparse
@@ -34,7 +36,8 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
 from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
-                      log_to, seed_output_dir, FAMILY_ORDER, FAMILY_LABELS)
+                      log_to, seed_output_dir, add_split_argument,
+                      FAMILY_ORDER, FAMILY_LABELS)
 from recontact_zoom import episode_signals
 
 PRIMARY_WINDOW_S = 0.005
@@ -174,14 +177,15 @@ def main():
                         default=list(SENSITIVITY_WINDOWS_S))
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
                         help="Which training_runs/seed<N>/ to evaluate.")
+    add_split_argument(parser)
     args = parser.parse_args()
 
-    with log_to(seed_output_dir(args.seed) / "window_analysis.txt"):
+    with log_to(seed_output_dir(args.seed, args.split) / "window_analysis.txt"):
         run(args)
 
 
 def run(args):
-    bundles = load_bundles(args.seed)
+    bundles = load_bundles(args.seed, args.split)
 
     families = episode_families()
     episodes = [Path(p).parent.name for p in bundles["original"][0].episode_paths]

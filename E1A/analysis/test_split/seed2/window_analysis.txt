@@ -1,0 +1,70 @@
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_202626_362627_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_203026_551483_modified/best.pt
+
+======================================================================================================================
+PRIMARY WINDOW  +/-5 ms   (frozen before testing)      v_x error in mm/s
+======================================================================================================================
+
+[a3]  separation / recontact
+  episode                         cond  ev    RMSE in   RMSE out   samp %    err %    conc   max|e| in   RMSE all
+  a3_0001                     original   3   0.504384   0.017847     1.61    92.90    57.6    2.575986   0.066443
+  a3_0001                     modified   3   0.038108   0.020479     1.61     5.37     3.3    0.077988   0.020882
+                                 delta      -0.466276  +0.002632                     -54.3   -2.497998  -0.045562   <- BACKGROUND WORSE
+  a3_0004                     original   3   0.738427   0.025072     2.00    94.64    47.4    3.561905   0.107253
+  a3_0004                     modified   3   0.843661   0.046868     2.00    86.84    43.5    2.181547   0.127923
+                                 delta      +0.105235  +0.021796                      -3.9   -1.380358  +0.020669   <- BACKGROUND WORSE
+  a3_0009                     original   3   0.455567   0.013818     1.83    95.30    52.0    1.711546   0.063153
+  a3_0009                     modified   3   0.049293   0.017608     1.83    12.76     7.0    0.137825   0.018677
+                                 delta      -0.406274  +0.003789                     -45.1   -1.573721  -0.044476   <- BACKGROUND WORSE
+
+[a3_contact_control]  sustained-contact control
+  episode                         cond  ev    RMSE in   RMSE out   samp %    err %    conc   max|e| in   RMSE all
+  a3_contact_control_0003     original   0        n/a   0.009220     0.00     0.00     n/a         n/a   0.009220
+  a3_contact_control_0003     modified   0        n/a   0.006366     0.00     0.00     n/a         n/a   0.006366
+                                 delta           +nan  -0.002854                      +nan        +nan  -0.002854
+  a3_contact_control_0009     original   0        n/a   0.001303     0.00     0.00     n/a         n/a   0.001303
+  a3_contact_control_0009     modified   0        n/a   0.001224     0.00     0.00     n/a         n/a   0.001224
+                                 delta           +nan  -0.000079                      +nan        +nan  -0.000079
+  a3_contact_control_0013     original   0        n/a   0.007092     0.00     0.00     n/a         n/a   0.007092
+  a3_contact_control_0013     modified   0        n/a   0.001626     0.00     0.00     n/a         n/a   0.001626
+                                 delta           +nan  -0.005466                      +nan        +nan  -0.005466
+
+[a3_free_control]  free-flight control
+  episode                         cond  ev    RMSE in   RMSE out   samp %    err %    conc   max|e| in   RMSE all
+  a3_free_control_0005        original   0        n/a   0.009408     0.00     0.00     n/a         n/a   0.009408
+  a3_free_control_0005        modified   0        n/a   0.005442     0.00     0.00     n/a         n/a   0.005442
+                                 delta           +nan  -0.003966                      +nan        +nan  -0.003966
+  a3_free_control_0015        original   0        n/a   0.005594     0.00     0.00     n/a         n/a   0.005594
+  a3_free_control_0015        modified   0        n/a   0.003299     0.00     0.00     n/a         n/a   0.003299
+                                 delta           +nan  -0.002295                      +nan        +nan  -0.002295
+  a3_free_control_0016        original   0        n/a   0.010799     0.00     0.00     n/a         n/a   0.010799
+  a3_free_control_0016        modified   0        n/a   0.007456     0.00     0.00     n/a         n/a   0.007456
+                                 delta           +nan  -0.003343                      +nan        +nan  -0.003343
+
+======================================================================================================================
+PREDEFINED WINDOW SENSITIVITY      v_x error in mm/s
+  An improvement that holds as the window widens is a real reduction;
+  one that fades means the error moved outward rather than went away.
+======================================================================================================================
+
+[a3_0001]
+    window   samp %  RMSE in orig  RMSE in mod   ratio  RMSE out orig  RMSE out mod   ratio  err % orig  err % mod
+       2ms     0.63      0.777858     0.046399   0.060       0.024306      0.020618   0.848       86.70       3.12
+       5ms     1.61      0.504384     0.038108   0.076       0.017847      0.020479   1.147       92.90       5.37  <-- primary
+      10ms     3.24      0.360193     0.036805   0.102       0.014560      0.020131   1.383       95.35      10.08
+      20ms     6.51      0.255094     0.032408   0.127       0.013823      0.019831   1.435       95.95      15.68
+
+[a3_0004]
+    window   samp %  RMSE in orig  RMSE in mod   ratio  RMSE out orig  RMSE out mod   ratio  err % orig  err % mod
+       2ms     0.79      1.167005     1.134586   0.972       0.026460      0.078720   2.975       93.96      62.43
+       5ms     2.00      0.738427     0.843661   1.143       0.025072      0.046868   1.869       94.64      86.84  <-- primary
+      10ms     4.00      0.522676     0.605585   1.159       0.024392      0.041943   1.720       95.04      89.68
+      20ms     8.01      0.369612     0.429493   1.162       0.024636      0.041516   1.685       95.15      90.31
+
+[a3_0009]
+    window   samp %  RMSE in orig  RMSE in mod   ratio  RMSE out orig  RMSE out mod   ratio  err % orig  err % mod
+       2ms     0.72      0.719882     0.051432   0.071       0.016310      0.018227   1.118       93.38       5.45
+       5ms     1.83      0.455567     0.049293   0.108       0.013818      0.017608   1.274       95.30      12.76  <-- primary
+      10ms     3.69      0.322692     0.038279   0.119       0.012486      0.017496   1.401       96.24      15.48
+      20ms     7.40      0.228598     0.029997   0.131       0.011566      0.017460   1.510       96.89      19.07

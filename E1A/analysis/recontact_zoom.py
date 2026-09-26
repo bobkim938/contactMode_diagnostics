@@ -10,8 +10,10 @@ Figures show raw samples. A light moving average is drawn over them as a
 guide, but every number reported here comes from the unsmoothed error.
 
     python E1A/analysis/recontact_zoom.py --seed 0
+    python E1A/analysis/recontact_zoom.py --seed 0 --split test
 
-Figures and the printed metrics go to E1A/analysis/seed<N>/.
+Figures and the printed metrics go to E1A/analysis/seed<N>/, or
+E1A/analysis/test_split/seed<N>/ with --split test.
 """
 
 import argparse
@@ -26,7 +28,7 @@ E1A = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(E1A))
 
 from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
-                      log_to, seed_output_dir)
+                      log_to, seed_output_dir, add_split_argument)
 
 CONDITIONS = ("original", "modified")
 COLORS = {"original": "#1f77b4", "modified": "#ff7f0e"}
@@ -220,17 +222,18 @@ def main():
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
                         help="Which training_runs/seed<N>/ to evaluate.")
     parser.add_argument("--output-dir", type=Path, default=None,
-                        help="Defaults to E1A/analysis/seed<N>/figures.")
+                        help="Defaults to figures/ in the seed's output directory.")
+    add_split_argument(parser)
     args = parser.parse_args()
     if args.output_dir is None:
-        args.output_dir = seed_output_dir(args.seed) / "figures"
+        args.output_dir = seed_output_dir(args.seed, args.split) / "figures"
 
-    with log_to(seed_output_dir(args.seed) / "recontact_zoom.txt"):
+    with log_to(seed_output_dir(args.seed, args.split) / "recontact_zoom.txt"):
         run(args)
 
 
 def run(args):
-    bundles = load_bundles(args.seed)
+    bundles = load_bundles(args.seed, args.split)
 
     families = episode_families()
     dataset = bundles["original"][0]

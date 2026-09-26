@@ -24,8 +24,10 @@ A negative change indicates an improvement; a positive change
 indicates a deterioration.
 
     python E1A/analysis/region_analysis.py --seed 0
+    python E1A/analysis/region_analysis.py --seed 0 --split test
 
-The report is also saved to E1A/analysis/seed<N>/region_analysis.txt.
+The report is also saved to E1A/analysis/seed<N>/region_analysis.txt
+E1A/analysis/test_split/seed<N>/ with --split test.
 """
 
 import argparse
@@ -39,7 +41,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
 from diagnose import (RUN_ROOT, DEFAULT_SEED, load_bundles, episode_families,
-                      log_to, seed_output_dir)
+                      log_to, seed_output_dir, add_split_argument)
 from recontact_zoom import episode_signals
 from window_analysis import CONDITIONS, PRIMARY_WINDOW_S, geometric_recontacts
 
@@ -183,14 +185,15 @@ def main():
                         help="maximum penetration for shallow contact, mm")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
                         help="Which training_runs/seed<N>/ to evaluate.")
+    add_split_argument(parser)
     args = parser.parse_args()
 
-    with log_to(seed_output_dir(args.seed) / "region_analysis.txt"):
+    with log_to(seed_output_dir(args.seed, args.split) / "region_analysis.txt"):
         run(args)
 
 
 def run(args):
-    bundles = load_bundles(args.seed)
+    bundles = load_bundles(args.seed, args.split)
 
     families = episode_families()
     episodes = [

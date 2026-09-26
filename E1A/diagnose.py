@@ -18,6 +18,10 @@ TRAINING_RUNS = Path(__file__).resolve().parent / "training_runs"
 
 DEFAULT_SEED = 42
 
+# validation results stay where they were and test results go to test_split/
+SPLITS = ("validation", "test")
+DEFAULT_SPLIT = "validation"
+
 RUN_ROOT = Path(__file__).resolve().parent / "run_001"
 
 FAMILY_ORDER = ("a3", "a3_contact_control", "a3_free_control")
@@ -40,14 +44,27 @@ def checkpoint_path(seed, variant):
     return paths[0]
 
 
-def seed_output_dir(seed):
+def split_output_dir(split=DEFAULT_SPLIT):
+    """analysis/ for the validation split, analysis/test_split/ for test"""
+    if split not in SPLITS:
+        raise SystemExit(f"Unknown split {split!r}; expected one of {SPLITS}.")
+    return ANALYSIS_DIR if split == "validation" else ANALYSIS_DIR / "test_split"
+
+
+def seed_output_dir(seed, split=DEFAULT_SPLIT):
     """
-    analysis/seed<N>/, where every result for this seed is written. Both
+    <split dir>/seed<N>/, where every result for this seed is written. Both
     runs are checked first, so a mistyped seed leaves no empty directory.
     """
     for variant in ("original", "modified"):
         checkpoint_path(seed, variant)
-    return ANALYSIS_DIR / f"seed{seed}"
+    return split_output_dir(split) / f"seed{seed}"
+
+
+def add_split_argument(parser):
+    parser.add_argument("--split", choices=SPLITS, default=DEFAULT_SPLIT,
+                        help="Episodes to evaluate on. test writes to "
+                             "analysis/test_split/.")
 
 
 class _Tee:
@@ -93,13 +110,13 @@ def init_model(seed=DEFAULT_SEED):
     model_0, checkpoint_0, model_0_9, checkpoint_0_9 = loaded
     return model_0, checkpoint_0, model_0_9, checkpoint_0_9
 
-def load_dataset(norm_stats, is_modified=False):
+def load_dataset(norm_stats, is_modified=False, split=DEFAULT_SPLIT):
     variant = "modified" if is_modified else "original"
     root = Path(__file__).resolve().parent / "run_001" / variant
 
     dataset = E1Dataset(
         roots = root,
-        split = "validation",
+        split = split,
         stats = norm_stats
     )
     return dataset
@@ -141,11 +158,8 @@ def available_seeds():
     )
 
 
-def load_bundles(seed=DEFAULT_SEED):
-    """
-    condition -> (validation dataset, predicted, target) for this seed's
-    original and modified models, each on its own condition's data
-    """
+def load_bundles(seed=DEFAULT_SEED, split=DEFAULT_SPLIT):
+    print(f"Split: {split}")
     model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model(seed)
     bundles = {}
     for condition, model, checkpoint, is_modified in (
@@ -159,7 +173,7 @@ def load_bundles(seed=DEFAULT_SEED):
             )
         stats = {name: tensor.detach().cpu().numpy()
                  for name, tensor in checkpoint["normalization_stats"].items()}
-        dataset = load_dataset(stats, is_modified)
+        dataset = load_dataset(stats, is_modified, split)
         predicted, target = compute_predictions(model, dataset, stats)
         bundles[condition] = (dataset, predicted, target)
     return bundles
@@ -233,7 +247,8 @@ def print_family_vx_comparison(
               f"{after - before:>+22.6f}{change:>+10.1%}")
 
 
-def main(seed):
+def main(seed, split=DEFAULT_SPLIT):
+    print(f"Split: {split}")
     model_0, checkpoint_0, model_0_9, checkpoint_0_9 = init_model(seed)
     norm_state_0 = {
         name: tensor.detach().cpu().numpy()
@@ -244,8 +259,8 @@ def main(seed):
         for name, tensor in checkpoint_0_9["normalization_stats"].items()
     }
 
-    dataset_0 = load_dataset(norm_state_0)
-    dataset_0_9 = load_dataset(norm_state_0_9, True)
+    dataset_0 = load_dataset(norm_state_0, split=split)
+    dataset_0_9 = load_dataset(norm_state_0_9, True, split)
 
     predicted_0, target_0 = compute_predictions(model_0, dataset_0, norm_state_0)
     predicted_0_9, target_0_9 = compute_predictions(model_0_9, dataset_0_9, norm_state_0_9)
@@ -278,7 +293,8 @@ if __name__ == "__main__":
     )
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED,
                         help="Which training_runs/seed<N>/ to evaluate.")
+    add_split_argument(parser)
     args = parser.parse_args()
 
-    with log_to(seed_output_dir(args.seed) / "diagnose.txt"):
-        main(args.seed)
+    with log_to(seed_output_dir(args.seed, args.split) / "diagnose.txt"):
+        main(args.seed, args.split)

@@ -18,6 +18,10 @@ overlaid, so seed-to-seed spread is visible next to the error itself.
 
     python E1A/analysis/seed_summary.py
     python E1A/analysis/seed_summary.py --seeds 0 1 2 3 42
+    python E1A/analysis/seed_summary.py --split test
+
+Output goes to E1A/analysis/summary/ 
+E1A/analysis/test_split/summary/ with --split test.
 """
 
 import argparse
@@ -31,15 +35,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
-from diagnose import (ANALYSIS_DIR, available_seeds, load_bundles,
-                      episode_families, log_to)
+from diagnose import (available_seeds, load_bundles, episode_families,
+                      log_to, split_output_dir, add_split_argument)
 from recontact_zoom import (CONDITIONS, INK, INK_MUTED, episode_signals,
                             recontact_times, around_event)
 from region_analysis import (REGIONS, REGION_LABELS, GUARD_S, SHALLOW_MM,
                              collect, balanced, percent_change)
 from window_analysis import PRIMARY_WINDOW_S
-
-SUMMARY_DIR = ANALYSIS_DIR / "summary"
 
 SEED_COLORS = ("#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4",
                "#008300", "#4a3aa7", "#e34948")
@@ -202,14 +204,16 @@ def main():
                         help="exclusion around every transition, s")
     parser.add_argument("--shallow", type=float, default=SHALLOW_MM,
                         help="maximum penetration for shallow contact, mm")
+    add_split_argument(parser)
     args = parser.parse_args()
 
     seeds = sorted(args.seeds) if args.seeds else available_seeds()
     if not seeds:
         raise SystemExit("No training_runs/seed<N>/ directories found.")
     colors = seed_colors(seeds)
+    args.summary_dir = split_output_dir(args.split) / "summary"
 
-    with log_to(SUMMARY_DIR / "seed_summary.txt"):
+    with log_to(args.summary_dir / "seed_summary.txt"):
         run(args, seeds, colors)
 
 
@@ -221,7 +225,7 @@ def run(args, seeds, colors):
 
     for seed in seeds:
         print(f"\n--- seed {seed} ---")
-        bundles = load_bundles(seed)
+        bundles = load_bundles(seed, args.split)
         if episodes is None:
             episodes = transition_episodes(bundles)
         per_seed[seed] = region_per_seed(bundles, episodes, args)
@@ -246,7 +250,7 @@ def run(args, seeds, colors):
             if not all(np.allclose(t, truths[0], atol=1e-6) for t in truths):
                 raise SystemExit(f"{condition}/{identifier}: truth differs by seed.")
         plot_overlay(windows[identifier], seeds, colors, identifier, args.cycle,
-                     SUMMARY_DIR / "figures"
+                     args.summary_dir / "figures"
                      / f"recontact_{identifier}_cycle{args.cycle}_seeds.png")
 
 

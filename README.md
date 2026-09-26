@@ -1,9 +1,9 @@
 # Contact Mode Diagnostics
 ## Summary
-A mode-agnostic neural dynamics model concentrates its per-step prediction error at recontact. In a paired experiment that changed only how the contact force switches on (near-instant vs 3-5 ms ramp), the recontact window prediction error decreased about 65% while the error in shallow sustained contact increased in all 5 seeds. The prediction error at free-flight (identical physics across conditions) weren't consistent on all seeds. All results are on validation episodes.
+A mode-agnostic neural dynamics model concentrates its one-step prediction error at recontact. In a paired experiment that replaced the near-instant onset of contact force with a ~3–5 ms ramp, leaving steady contact untouched, recontact-window error fell by a median of 65% on validation and 54% on held-out test episodes (5/5 training seeds lower in both), with the size of the reduction varying by episode. Error in shallow sustained contact rose in 5/5 seeds in both. Both directions were confirmed on held-out episodes under a plan frozen before evaluation. Away from contact, where the physics is identical, the modified models tended to have lower error — a learning-side effect not yet isolated.
 
 ## Motivation
-World models for contact-rich manipulations usually employ smooth function approximators; however, contact onsets are discontinuous at typical sampling rates. Therfore, this project isolates that mismatch at the simulator to investigate where a mode-agnostic predictor fails, and whether that error comes from contact or depends on how sharply the contact switches on.
+World models for contact-rich manipulation usually employ smooth function approximators; however, contact onsets are discontinuous at typical sampling rates. Therefore, this project isolates that mismatch in a simulator to investigate where a mode-agnostic predictor fails, and whether that error comes from contact or depends on how sharply the contact switches on.
 
 ## Simulation Environment
 We deliberately used a minimal system to make the mechanisms and labels inspectable:
@@ -137,7 +137,7 @@ Across 5 validation episodes, sample-weighted component RMSE was:
   <img src="E1/analysis/20260923_160152_584385/a3_0004_recontact_zoom.png" width="46.9%" alt="a3_0004 recontact zoom">
 </p>
 
-In A3 validation episode `a3_0004`, the $\pm 5$ ms recontact window contained 99.13% of the squared $v_x$ prediction error while covering only 2.10% of eligible samples. We also observe mode-dependent error structure for A2, however, slide $\to$ quasi-stick showed higher prediction error compared to quasi-stick $\to$ slide.
+In A3 validation episode `a3_0004`, the $\pm 5$ ms recontact window contained 99.13% of the squared $v_x$ prediction error while covering only 2.10% of eligible samples. We also observe mode-dependent error structure for A2, however, slide $\to$ quasi-stick showed higher prediction error compared to quasi-stick $\to$ slide (qualitative, single-seed).
 E1 therefore shows that the prediction error can be strongly localized around recontact in this controlled simulator and model.
 
 ## E1A Experimental Design
@@ -190,9 +190,9 @@ Regions are defined per condition from its own trajectory:
 | :--- | ---: | ---: | :--- | :--- |
 | Near recontact | 0.5743 (0.5472–0.6061) | 0.1963 (0.1335–0.2416) | **−64.6%** (−76.0% to −56.8%) | 5/5 improved |
 | Shallow contact | 0.0141 (0.0130–0.0167) | 0.0280 (0.0190–0.0343) | **+98.5%** (+36.1% to +163.6%) | 5/5 worse |
-| Free flight | 0.0082 (0.0051–0.0115) | 0.0072 (0.0037–0.0149) | **−20.5%** (−45.7% to +29.7%) | Inconsistent |
+| Free flight | 0.0082 (0.0051–0.0115) | 0.0072 (0.0037–0.0149) | **−20.5%** (−45.7% to +29.7%) | No consistent change |
 
-In cycle 0 of each validation episode, we observe all five original conditioned model straddle at the recontact step (negative before and positive after recontact step). On the other hand, the modified model shows single-lobed timing error whose sign varies by episode. 
+In cycle 0 of each validation episode, we observe all five original conditioned model straddle the recontact step (negative before and positive after recontact step). On the other hand, the modified model shows single-lobed timing error whose sign varies by episode. 
 
 <p align="center">
   <img src="E1A/analysis/summary/figures/recontact_a3_0006_cycle0_seeds.png" width="32%" alt="a3_0006 recontact cycle 0, original vs modified, five seeds overlaid">
@@ -200,9 +200,9 @@ In cycle 0 of each validation episode, we observe all five original conditioned 
   <img src="E1A/analysis/summary/figures/recontact_a3_0017_cycle0_seeds.png" width="32%" alt="a3_0017 recontact cycle 0, original vs modified, five seeds overlaid">
 </p>
 
-Moreover, we observe widening the window leaves the modified/original RMSE ratio nearly unchanged, which the ratio (modifed/original) changed by at most 0.046 and stayed <= 0.69 in all 15 seed-episode combinations.
+Moreover, we observe widening the window leaves the modified/original RMSE ratio nearly unchanged, which the ratio (modified/original) changed by at most 0.046 and stayed <= 0.70 in all 15 seed-episode combinations.
 
-Control episodes show no consistent change. In every sustained-contact and free-motion control episode, per-seed changes span zero (1–2 of 5 seeds worse), although medians lowered (−16% to −61%). Furthermore, the same two seeds (0, 1) are worse in all episodes, which indicates training variations rather than episode physics.
+Furthermore, in every sustained-contact and free-motion control episodes, per-seed changes span zero (1-2 of 5 seeds worse), although medians were negative (−16% to −61%).
 
 ## Interpretation
 **Working Hypothesis:** The shallow contact region coincides with the `solimp` width (1mm). In the original condition, the impedance varies from 0.9 to 0.95 in this band, while the modified condition varies from 0 to 0.95. Since Mujoco's contact force scales with impedance, the modified contact force is nonlinear in penetration across this band. Therefore, smoothing may have relocated the difficulty from contact boundary into this band, rather than removing it.
@@ -220,8 +220,21 @@ If this holds, the modified model's shallow contact error should peak at this ba
   - A2: Robustness across label thresholds has not yet been benchmarked.
 
 ## Held-out Test
-The analysis plan for test split at TEST_PLAN.md. Results will be added here after.
+Following [TEST_PLAN.md](E1A/analysis/TEST_PLAN.md), the same 10 checkpoints were evaluated on the three A3 test episodes (a3_0001, a3_0004, a3_0009) without retraining, using the regions and $\pm 5$ ms window defined above. Each entry is seeds in the criterion's direction, median per-seed change (min to max).
 
+| Region | Criterion | Validation | Test | Verdict |
+| :--- | :--- | :--- | :--- | :--- |
+| Near recontact | modified lower in 5/5 | 5/5, −64.6% (−76.0% to −56.8%) | 5/5, −54.0% (−76.5% to −15.7%) | **Confirmed** |
+| Shallow contact | modified higher in 5/5 | 5/5, +98.5% (+36.1% to +163.6%) | 5/5, +138.1% (+57.2% to +280.3%) | **Confirmed** |
+| Free flight | no consistent validation direction | no consistent change | 3/5 lower, −21.5% (−63.8% to +25.0%) | — |
+
+`a3_0001` and `a3_0009` showed lower RMSE for all 5/5 seeds (-59% to -92%). However, `a3_0004` showed lower RMSE in 4/5 (seed 2: +14.3%). The balanced near-recontact result is dominated by `a3_0004`. Moreover, widening the window from $\pm 5$ ms to $\pm 20$ ms moved ratio (modified/original) by at most 0.071.
+
+Evaluation on control episodes yielded two main observations:
+- Sustained-contact controls: Results were mixed, with lower error in 10 out of 15 seed–episode combinations; in every episode, the per-seed changes spanned zero.
+- Free-motion controls: Despite identical physics across conditions, the modified model reduced error in 14/15 combinations on test (medians −37% to −42%) and 11/15 on validation.
+
+Because physical dynamics do not differ in free motion, this improvement points to a learning-side effect—potentially driven by per-condition normalization or by the capacity the original model must spend fitting the recontact jump. It has not yet been isolated.
 
 ## Reproduction
 ```bash
@@ -229,9 +242,21 @@ git lfs install
 git clone https://github.com/bobkim938/contactMode_diagnostics
 cd contactMode_diagnostics
 pip install -r requirements.txt
+
+# reproduce the reported numbers from the included checkpoints
+for split in validation test; do
+  for s in 0 1 2 3 42; do
+    python E1A/analysis/region_analysis.py --seed $s --split $split
+    python E1A/analysis/window_analysis.py --seed $s --split $split
+    python E1A/analysis/recontact_zoom.py  --seed $s --split $split
+  done
+  python E1A/analysis/seed_summary.py --split $split
+done
+
+# to retrain instead, move the included runs aside first
+mv E1A/training_runs E1A/training_runs_published
 for s in 42 0 1 2 3; do
   python model/train.py --experiment E1A --variant original --seed $s
   python model/train.py --experiment E1A --variant modified --seed $s
 done
-python E1A/analysis/seed_summary.py --seeds 0 1 2 3 42
 ```

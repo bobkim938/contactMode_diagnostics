@@ -1,0 +1,36 @@
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed0/20260925_200622_199430_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed0/20260925_201123_361088_modified/best.pt
+
+======================================================================================
+REGION ANALYSIS   near: +/-5 ms   guard: 20 ms   shallow: 0-1 mm      v_x error in mm/s
+======================================================================================
+
+[Near recontact]
+  episode                      N orig   RMSE orig    N mod    RMSE mod   change %
+  a3_0001                         237    0.438134      237    0.178928      -59.2
+  a3_0004                         239    1.381055      239    1.214007      -12.1
+  a3_0009                         237    0.434436      237    0.071073      -83.6
+  balanced                               0.873310             0.709667      -18.7
+
+[Shallow contact, away from transitions]
+  episode                      N orig   RMSE orig    N mod    RMSE mod   change %
+  a3_0001                        6888    0.014074     6858    0.032801      133.1
+  a3_0004                        4913    0.016756     4899    0.084721      405.6
+  a3_0009                        5969    0.013047     5947    0.033648      157.9
+  balanced                               0.014709             0.055934      280.3
+
+[Free flight, away from transitions]
+  episode                      N orig   RMSE orig    N mod    RMSE mod   change %
+  a3_0001                        4971    0.005960     4835    0.005644       -5.3
+  a3_0004                        3781    0.006996     3668    0.008518       21.7
+  a3_0009                        4085    0.003665     3946    0.002382      -35.0
+  balanced                               0.005713             0.006058        6.0
+
+======================================================================================
+SUMMARY   episode-balanced v_x RMSE (mm/s); negative change = improvement
+======================================================================================
+  region                                        original    modified   change %
+  Near recontact                                0.873310    0.709667      -18.7
+  Shallow contact, away from transitions        0.014709    0.055934      280.3
+  Free flight, away from transitions            0.005713    0.006058        6.0

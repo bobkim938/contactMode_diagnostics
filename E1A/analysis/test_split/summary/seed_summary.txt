@@ -1,0 +1,67 @@
+
+--- seed 0 ---
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed0/20260925_200622_199430_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed0/20260925_201123_361088_modified/best.pt
+
+--- seed 1 ---
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed1/20260925_201545_375046_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed1/20260925_201953_746610_modified/best.pt
+
+--- seed 2 ---
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_202626_362627_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_203026_551483_modified/best.pt
+
+--- seed 3 ---
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed3/20260925_203646_699574_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed3/20260925_204055_421843_modified/best.pt
+
+--- seed 42 ---
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed42/20260923_154021_752705_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed42/20260923_154352_404540_modified/best.pt
+
+======================================================================================
+PER SEED   episode-balanced v_x RMSE (mm/s); negative change = improvement
+======================================================================================
+
+[Near recontact]
+  seed        original    modified   change %
+  0           0.873310    0.709667      -18.7
+  1           0.671673    0.283445      -57.8
+  2           0.579430    0.488415      -15.7
+  3           1.071887    0.493259      -54.0
+  42          0.688768    0.161950      -76.5
+
+[Shallow contact, away from transitions]
+  seed        original    modified   change %
+  0           0.014709    0.055934      280.3
+  1           0.013539    0.033689      148.8
+  2           0.016470    0.039206      138.1
+  3           0.015176    0.033414      120.2
+  42          0.021527    0.033838       57.2
+
+[Free flight, away from transitions]
+  seed        original    modified   change %
+  0           0.005713    0.006058        6.0
+  1           0.013435    0.004859      -63.8
+  2           0.010041    0.007887      -21.5
+  3           0.011698    0.014621       25.0
+  42          0.011283    0.004725      -58.1
+
+============================================================================================================
+SUMMARY OVER 5 SEEDS (0, 1, 2, 3, 42)
+  original, modified: mean (min-max) of episode-balanced v_x RMSE, mm/s
+  per-seed change:    median (min to max) of the change within each seed
+============================================================================================================
+  region                                    original                modified                per-seed change             seeds         
+  Near recontact                            0.7770 (0.5794-1.0719)  0.4273 (0.1620-0.7097)  -54.0% (-76.5% to -15.7%)   5/5 improved  
+  Shallow contact, away from transitions    0.0163 (0.0135-0.0215)  0.0392 (0.0334-0.0559)  +138.1% (+57.2% to +280.3%) 5/5 worse     
+  Free flight, away from transitions        0.0104 (0.0057-0.0134)  0.0076 (0.0047-0.0146)  -21.5% (-63.8% to +25.0%)   3/5 improved  
+
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/summary/figures/recontact_a3_0001_cycle0_seeds.png
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/summary/figures/recontact_a3_0004_cycle0_seeds.png
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/summary/figures/recontact_a3_0009_cycle0_seeds.png

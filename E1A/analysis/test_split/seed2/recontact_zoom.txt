@@ -1,0 +1,20 @@
+Split: test
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_202626_362627_original/best.pt
+Model loaded from: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/training_runs/seed2/20260925_203026_551483_modified/best.pt
+
+Transition episodes: ['a3_0001', 'a3_0004', 'a3_0009']
+
+Metrics from unsmoothed error; error in mm/s
+  episode    cyc  condition   t_event (s)   baseline  lead ms  recov ms  peak err  peak tau    err@0
+  a3_0001      0   original      2.520000   0.020511    7.875     9.125   +2.5760    +0.000  +2.5760
+  a3_0001      0   modified      2.520000   0.016741    0.875    11.875   -0.0776    +0.000  -0.0776
+                event shift       +0.0000 ms
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/seed2/figures/recontact_a3_0001_cycle0.png
+  a3_0004      0   original      1.916500   0.020193    3.750     9.750   +3.5198    +0.000  +3.5198
+  a3_0004      0   modified      1.916375   0.035810    9.750     8.875   +2.1815    +1.625  +0.4288
+                event shift       -0.1250 ms
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/seed2/figures/recontact_a3_0004_cycle0.png
+  a3_0009      0   original      2.309250   0.018404    5.375     7.375   -1.6801    -0.125  +1.3467
+  a3_0009      0   modified      2.309125   0.010193    0.000    12.375   -0.1378    +1.875  -0.0000
+                event shift       -0.1250 ms
+Saved figure to: /Users/kimminjoong/Desktop/Project/contactMode_diagnostics/E1A/analysis/test_split/seed2/figures/recontact_a3_0009_cycle0.png
